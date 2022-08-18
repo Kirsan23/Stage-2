@@ -1,27 +1,23 @@
-import { Heading } from '../../components/Heading';
-import './HeroSection.scss';
 import { Button } from '../../components/Button';
 import { Typography } from '../../components/Typography';
-import { TextBlock } from '../TextBlock/TextBlock';
+import './HeroSection.scss';
 
 export function HeroSection() {
   return (
     <section className="hero-section">
       <div className="hero-section-main-block">
-        {/* <Heading>
-          We Are The Best <span>Digital Agency</span> For Business
-        </Heading>
-        <Typography>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet.
-        </Typography> */}
-        <TextBlock
-          title='We Are The Best <span>Digital Agency</span> For Business'
-          typography='Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit. Exercitation
-        veniam consequat sunt nostrud amet.'
-        ></TextBlock>
+        <div>
+          <Typography variant="h1">We Are The Best </Typography>
+          <Typography variant="h1" color="orange">
+            Digital Agency{' '}
+          </Typography>
+          <Typography variant="h1">For Business</Typography>
+          <Typography variant="body1" component="p">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </Typography>
+        </div>
         <Button>Contact Us</Button>
       </div>
       <img

@@ -1,11 +1,16 @@
-import { Heading } from '../Heading';
+import React from 'react';
+import { Typography } from '../Typography';
+// import PropTypes from "prop-types";
 
-export function Logo(props) {
-  const { reverse } = props
-
-  if (reverse) {
-    return <Heading><span>Digi</span>ency</Heading>
-  }
-
-  return <Heading>Digi<span>ency</span></Heading>;
+export function Logo() {
+  return (
+    <Typography variant="h1" color="black">
+      Digi
+      <Typography variant="h1" color="orange">
+        ency
+      </Typography>
+    </Typography>
+  );
 }
+
+Logo.propTypes = {};

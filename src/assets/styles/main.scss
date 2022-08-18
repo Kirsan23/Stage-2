@@ -17,79 +17,72 @@ $main-margin-right: 135px;
 // Body
 
 body {
-    font-family: 'Work Sans';
-    width: 100%;
-    margin: auto;
+  font-family: 'Work Sans';
+  width: 100%;
+  margin: auto;
 }
-
-// Div
 
 *div {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-// Titles
-
-// Heading
 
 
 @media screen and (min-device-width: 401px) and (max-device-width: 768px) {
-    *h1 {
-        font-size: 39.06px;
-        
-    }
-    
-    *h2 {
-        font-size: 31.25px;
-    }
-    
-    *h3 {
-        font-size: 25px;
-    }
-    
-    *h4 {
-        font-size: 20px;
-    }
+  *h1 {
+    font-size: 39.06px;
+  }
 
-    *h5 {
-        font-size: 16px;
-        color: $main-orange;
-    }
-    
-    *h6 {
-        font-size: 12px;
-    }
+  *h2 {
+    font-size: 31.25px;
+  }
+
+  *h3 {
+    font-size: 25px;
+  }
+
+  *h4 {
+    font-size: 20px;
+  }
+
+  *h5 {
+    font-size: 16px;
+    color: $main-orange;
+  }
+
+  *h6 {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-device-width: 400px){
-    *h1 {
-        font-size: 31.25px;
-    }
-    
-    *h2 {
-        font-size: 25px;
-    }
-    
-    *h3 {
-        font-size: 20px;
-    }
+  *h1 {
+    font-size: 31.25px;
+  }
 
-    *h4 {
-        font-size: 16px;
-    }
-    
-    *h5 {
-        font-size: 12px;
-    }
+  *h2 {
+    font-size: 25px;
+  }
+
+  *h3 {
+    font-size: 20px;
+  }
+
+  *h4 {
+    font-size: 16px;
+  }
+
+  *h5 {
+    font-size: 12px;
+  }
 }
 
 :export {
-    main-orange: #FF5300;
-    main-black: #373737;
-    main-gray: #7B7B7B;
-    main-White: #FFFFFF;
-    main-orange-bcg: #FFF7F4;
-    main-dark-bcg: #18191A;
-    main-dark-view-1: #242526;
-    main-darc-view-2: #3A3B3C;
+  main-orange: #FF5300;
+  main-black: #373737;
+  main-gray: #7B7B7B;
+  main-White: #FFFFFF;
+  main-orange-bcg: #FFF7F4;
+  main-dark-bcg: #18191A;
+  main-dark-view-1: #242526;
+  main-darc-view-2: #3A3B3C;
 }
