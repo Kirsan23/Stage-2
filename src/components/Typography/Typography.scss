@@ -1,8 +1,54 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .typography {
-    font-weight: 400;
-    font-size: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: colors.$main-gray;
 
-    color: colors.$main-gray;
+  &.orange {
+    color: colors.$main-orange;
+  }
+
+  &.black {
+    color: colors.$main-black;
+  }
+
+  &.body1 {
+    font-size: 16px;
+  }
+
+  &.body2 {}
+
+  &.h1, &.h2, &.h3, &.h4, &.h5, &.h6 {
+    font-weight: 700;
+  }
+
+  &.h1 {
+    font-size: 48px;
+  }
+
+  &.h2 {
+    font-size: 39.06px;
+  }
+
+  &.h3 {
+    font-size: 31.25px;
+  }
+
+  &.h4 {
+    font-size: 25px;
+  }
+
+  &.h5 {
+    font-size: 20px;
+  }
+
+  &.h6 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &.subtitle1 {}
+
+  &.subtitle2 {}
 }
