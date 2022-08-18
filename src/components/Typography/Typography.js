@@ -8,7 +8,7 @@ export const Typography = (props) => {
     variant = 'body1',
     component = `span`,
     color = 'black',
-    className,
+    className = '',
   } = props;
   const Tag = component;
 
