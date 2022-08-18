@@ -1,0 +1,8 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.typography {
+    font-weight: 400;
+    font-size: 16px;
+
+    color: colors.$main-gray;
+}
