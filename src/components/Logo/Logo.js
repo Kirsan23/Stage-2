@@ -11,6 +11,6 @@ export function Logo() {
       </Typography>
     </Typography>
   );
-}
+};
 
-Logo.propTypes = {};
+Logo.propTypes  = {};

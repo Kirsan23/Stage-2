@@ -1,6 +1,9 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .btn {
+    justify-content: center;
+    display: flex;
+
     padding: 13px 23px;
 
     font-weight: 500;
@@ -16,5 +19,28 @@
     &:hover {
         transform: scale(1.05);
         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    &.gray {
+        background-color: colors.$main-gray;
+      }
+
+    &.blue {
+        background-color: #00ACFF;
+    }
+
+    &.black {
+        background-color: colors.$main-black;
+      }
+}
+
+.circular {
+    border-radius: 45px;
+    padding: 20px;
+    font-size: 25px;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
     }
 }

@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 120px;
 
   background: colors.$main-orange-bcg;
 
@@ -14,8 +15,8 @@
     width: 490px;
   }
 
-  &-img {
-  }
+//   &-img {
+//   }
 }
 
 .social-block {
@@ -24,7 +25,6 @@
   width: 40px;
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
 
   &-icon {
     box-sizing: border-box;
