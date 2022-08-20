@@ -1,7 +1,7 @@
 import './Button.scss';
 
 export const Button = (props) => {
-  const { children, variant, color } = props;
+  const { children = 'Contact Us', variant, color } = props;
 
   return (
     <button type="button" className={`btn ${variant} ${color}`}>
@@ -9,11 +9,3 @@ export const Button = (props) => {
     </button>
   );
 };
-
-// {
-//   children,
-//   variant = 'body1',
-//   component = `span`,
-//   color = 'black',
-//   className = '',
-// }

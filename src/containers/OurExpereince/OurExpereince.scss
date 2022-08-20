@@ -1,0 +1,10 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.our-expereince {
+    display: flex;
+    justify-content: center;
+    height: 675px;
+    margin-bottom: 120px;
+    
+    background: colors.$main-orange-bcg;
+}
