@@ -1,0 +1,17 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.ForTest {
+    &.oragne {
+        color: colors.$main-orange;
+    }
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    // color: colors.$main-orange;
+}
+
+h2 {
+    font-size: 39.06px;
+}

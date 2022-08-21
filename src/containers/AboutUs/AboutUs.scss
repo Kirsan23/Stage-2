@@ -1,8 +1,9 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .about-us {
+    max-width: 1300px;
     background-color: colors.$main-white;
-    margin-bottom: 120px;
+    margin: 0 auto 120px auto;
     
     &-block {
         display: flex;
