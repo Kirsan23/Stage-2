@@ -3,7 +3,8 @@ import { Typography } from '../../components/Typography';
 import './HeroSection.scss';
 import { ImgPaste } from '../../components/ImgPaste/ImgPaste';
 import { SocialBlock } from '../../components/SocialBlock/SocialBlock';
-import { ForTest } from '../../components/ForTest/ForTest';
+import { InfoBlock } from '../../components/InfoBlock';
+import { ForTest } from '../../components/ForTest';
 
 export function HeroSection() {
   return (
@@ -24,12 +25,12 @@ export function HeroSection() {
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </Typography> */}
-          <ForTest
+          <InfoBlock
             heading='We Are The Best Digital Agency For Business'
             highlight='Digital Agency'
-            paragraph='Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
             component='h1'
-          ></ForTest>
+            paragraph='Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+          />
         </div>
         {/* <Button /> */}
       </div>

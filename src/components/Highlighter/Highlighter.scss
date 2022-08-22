@@ -1,0 +1,23 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.highlighter {
+    &.h1 {
+        font-size: 48px;
+        font-weight: 700;
+    }
+
+    &.h2 {
+        font-size: 39.06px;
+        font-weight: 600;
+    }
+
+    &.oragne {
+        color: colors.$main-orange;
+    }
+    
+    &.black {
+        color: colors.$main-black;
+    }
+}
+
+
