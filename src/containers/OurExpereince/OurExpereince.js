@@ -1,7 +1,6 @@
-import { Button } from '../../components/Button';
-import { Typography } from '../../components/Typography';
 import { InfoBlock } from '../../components/InfoBlock';
 import './OurExpereince.scss';
+import { Typography } from '../../components/Typography';
 
 export function OurExpereince() {
   return (
@@ -10,12 +9,22 @@ export function OurExpereince() {
         <div className='our-expereince-main-block'>
           <InfoBlock
             title='Our Expereince'
-            heading='We Have Completed 150+ Projects Succesfully'
+            heading='We Have Completed 150+ Projects Successfully'
             highlight='150+ Projects'
-            paragraph={`Our Expereince We Have Completed 150+ Projects Succesfully Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nascetur imperdiet at a augue ullamcorper. Leo faucibus feugiat rutrum aenean. Nisi, lectus aliquet aliquam consectetur augue praesent. Lorem vulputate orci eget mi, sed pulvinar.
-            
-Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit faucibus est, dui interdum ut amet. Adipiscing feugiat vel at posuere in. Pellentesque volutpat vestibulum.`}
-          />
+          >
+            <Typography component='p'>
+              Our Expereince We Have Completed 150+ Projects Succesfully Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Nascetur
+              imperdiet at a augue ullamcorper. Leo faucibus feugiat rutrum
+              aenean. Nisi, lectus aliquet aliquam consectetur augue praesent.
+              Lorem vulputate orci eget mi, sed pulvinar.
+            </Typography>
+            <Typography component='p'>
+              Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit
+              faucibus est, dui interdum ut amet. Adipiscing feugiat vel at
+              posuere in. Pellentesque volutpat vestibulum.
+            </Typography>
+          </InfoBlock>
         </div>
         <div className='our-expereince-right-block'>
           <div className='our-expereince-right-block-card'>
