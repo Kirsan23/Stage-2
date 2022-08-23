@@ -10,12 +10,13 @@ import { ForTest } from '../../components/ForTest';
 import { ThemeSwitch } from '../../components/ThemeSwitch';
 
 export function HeroSection() {
-  const {darkMode} = useContext(DarkModeContext)
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <section className={`hero-section ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section
+      className={`hero-section ${darkMode ? `dark-theme` : `light-theme`}`}
+    >
       <div className='hero-section-main-block'>
-        <div>
-          {/* <Typography variant='h1' component='h1'>
+        {/* <Typography variant='h1' component='h1'>
             We Are The Best{' '}
           </Typography>
           <Typography variant='h1' component='h1' color='orange'>
@@ -29,15 +30,17 @@ export function HeroSection() {
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </Typography> */}
-          <InfoBlock
-            heading='We Are The Best Digital Agency For Business'
-            highlight='Digital Agency'
-            component='h1'
-            paragraph='Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-          />
-        </div>
-        {/* <Button /> */}
+        <InfoBlock
+          heading='We Are The Best Digital Agency For Business'
+          highlight='Digital Agency'
+          component='h1'
+        >
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+          sint. Velit officia consequat duis enim velit mollit. Exercitation
+          veniam consequat sunt nostrud amet.
+        </InfoBlock>
       </div>
+      {/* <Button /> */}
       <ImgPaste sectionName='hero-section' name='hero-section-img'></ImgPaste>
       <SocialBlock />
     </section>

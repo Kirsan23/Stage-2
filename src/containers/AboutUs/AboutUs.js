@@ -36,10 +36,21 @@ export function AboutUs() {
               title='About Us'
               heading='We Are Making Ideas Better For Everyone'
               highlight='Making Ideas Better'
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nascetur imperdiet at a augue ullamcorper. Leo faucibus feugiat rutrum aenean. Nisi, lectus aliquet aliquam consectetur augue praesent. Lorem vulputate orci eget mi, sed pulvinar.
-
-Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit faucibus est, dui interdum ut amet. Adipiscing feugiat vel at posuere in. Pellentesque volutpat vestibulum.`}
-            />
+            >
+              <Typography component='p' color='gray'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nascetur imperdiet at a augue ullamcorper. Leo faucibus feugiat
+                rutrum aenean. Nisi, lectus aliquet aliquam consectetur augue
+                praesent. Lorem vulputate orci eget mi, sed pulvinar.
+                <br />
+                <br />
+              </Typography>
+              <Typography component='p' color='gray'>
+                Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit
+                faucibus est, dui interdum ut amet. Adipiscing feugiat vel at
+                posuere in. Pellentesque volutpat vestibulum.
+              </Typography>
+            </InfoBlock>
           </div>
         </div>
         <div className='about-us-bottom-block'>

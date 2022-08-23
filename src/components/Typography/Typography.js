@@ -43,6 +43,6 @@ Typography.propTypes = {
     'p',
     'div',
   ]),
-  color: PropTypes.oneOf(['orange', 'black']),
+  color: PropTypes.oneOf(['orange', 'black', 'gray']),
   className: PropTypes.string,
 };

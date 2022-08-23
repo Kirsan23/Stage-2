@@ -14,7 +14,7 @@ export const InfoBlock = (props) => {
         highlight={highlight}
         component={component}
       />
-      {children}
+      <p className='info-block-paragraph'>{children}</p>
       <Button />
     </div>
   );

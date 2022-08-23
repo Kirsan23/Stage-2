@@ -1,8 +1,6 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .info-block {
-    white-space: pre-wrap;
-
     & h6, p {
         font-size: 16px;
         font-weight: 400;
