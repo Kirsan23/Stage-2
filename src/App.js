@@ -2,14 +2,17 @@ import { Header } from './containers/Header';
 import { HeroSection } from './containers/HeroSection';
 import { AboutUs } from './containers/AboutUs';
 import { OurExpereince } from './containers/OurExpereince';
+import { DarkModeProvider } from './components/Context';
 
 export function App() {
   return (
     <>
-      <Header />
-      <HeroSection />
-      <AboutUs />
-      <OurExpereince />
+      <DarkModeProvider>
+        <Header />
+        <HeroSection />
+        <AboutUs />
+        <OurExpereince />
+      </DarkModeProvider>
     </>
   );
 }

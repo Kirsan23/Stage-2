@@ -16,6 +16,15 @@
   }
 }
 
+.dark-theme {
+  background-color: colors.$main-darc-view-2;
+  color: colors.$main-white;
+}
+
+.light-theme {
+  background-color: colors.$main-white;
+}
+
 // .social-block {
 //   position: fixed;
 //   right: 0;

@@ -1,9 +1,13 @@
 import { Logo } from '../../components/Logo';
 import './Header.scss';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../components/Context';
+import { ThemeSwitch } from '../../components/ThemeSwitch';
 
 export function Header() {
+  const {darkMode} = useContext(DarkModeContext)
   return (
-    <header className='header'>
+    <header className={`header ${darkMode ? `dark-theme` : `light-theme`}`}>
       <div className="header-logo">
         <Logo />
       </div>
@@ -16,7 +20,7 @@ export function Header() {
         <h5 className='header-navigation-items'>Our Blog</h5>
         <h5 className='header-navigation-items'>Contact Us</h5>
       </div>
-      <div className='header-switcher'>*</div>
+      <ThemeSwitch />
     </header>
   );
 }

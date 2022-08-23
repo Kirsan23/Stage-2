@@ -11,7 +11,6 @@
     place-items: center;
 
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-    background-color: colors.$main-white;
 
     &-logo {
         margin-left: auto;
@@ -36,14 +35,11 @@
     }
 }
 
-.logo-text {
-    font-weight: 600;
+.dark-theme {
+    background-color: colors.$main-darc-view-2;
+    color: colors.$main-white;
 }
 
-.black-text {
-    color: colors.$main-black;
-}
-
-.orange-text {
-    color: colors.$main-orange;
+.light-theme {
+    background-color: colors.$main-white;
 }
