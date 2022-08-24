@@ -1,10 +1,13 @@
 import { InfoBlock } from '../../components/InfoBlock';
 import './OurExpereince.scss';
 import { Typography } from '../../components/Typography';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../components/Context';
 
 export function OurExpereince() {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <section className='our-expereince'>
+    <section className={`our-expereince ${darkMode ? `dark-theme` : `light-theme`}`}>
       <div className='our-expereince-block'>
         <div className='our-expereince-main-block'>
           <InfoBlock
