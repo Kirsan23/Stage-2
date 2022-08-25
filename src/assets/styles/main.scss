@@ -1,18 +1,19 @@
+@use './variables.scss' as colors;
 @import './icons.scss';
 
-// Main colors
-$main-orange: #FF5300;
-$main-black: #373737;
-$main-gray: #7B7B7B;
-$main-white: #FFFFFF;
-$main-orange-bcg: #FFF7F4;
-$main-dark-bcg: #18191A;
-$main-dark-view-1: #242526;
-$main-darc-view-2: #3A3B3C;
+// // Main colors
+// $main-orange: #FF5300;
+// $main-black: #373737;
+// $main-gray: #7B7B7B;
+// $main-white: #FFFFFF;
+// $main-orange-bcg: #FFF7F4;
+// $main-dark-bcg: #18191A;
+// $main-dark-view-1: #242526;
+// $main-darc-view-2: #3A3B3C;
 
-// Main margin
-$main-margin-left: 135px;
-$main-margin-right: 135px;
+// // Main margin
+// $main-margin-left: 135px;
+// $main-margin-right: 135px;
 
 // Body
 
@@ -20,6 +21,10 @@ body {
   font-family: 'Work Sans';
   width: 100%;
   margin: auto;
+
+  &.dark-theme {
+    background-color: colors.$main-dark-bcg;
+  }
 }
 
 *div {
@@ -46,7 +51,7 @@ body {
 
   *h5 {
     font-size: 16px;
-    color: $main-orange;
+    // color: $main-orange;
   }
 
   *h6 {
@@ -74,15 +79,4 @@ body {
   *h5 {
     font-size: 12px;
   }
-}
-
-:export {
-  main-orange: #FF5300;
-  main-black: #373737;
-  main-gray: #7B7B7B;
-  main-White: #FFFFFF;
-  main-orange-bcg: #FFF7F4;
-  main-dark-bcg: #18191A;
-  main-dark-view-1: #242526;
-  main-darc-view-2: #3A3B3C;
 }

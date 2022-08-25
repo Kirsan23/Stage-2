@@ -1,6 +1,8 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .info-block {
+    width: 570px;
+    
     & h6, p {
         font-size: 16px;
         font-weight: 400;

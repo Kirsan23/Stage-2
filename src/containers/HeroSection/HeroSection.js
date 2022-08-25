@@ -41,7 +41,7 @@ export function HeroSection() {
         </InfoBlock>
       </div>
       {/* <Button /> */}
-      <ImgPaste sectionName='hero-section' name='hero-section-img'></ImgPaste>
+      <ImgPaste sectionName='hero-section' name='hero-section-img' />
       <SocialBlock />
     </section>
   );

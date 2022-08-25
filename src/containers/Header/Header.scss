@@ -10,6 +10,7 @@
     justify-content: space-between;
     place-items: center;
 
+    background-color: colors.$main-white;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
     &-logo {
@@ -33,17 +34,12 @@
     &-switcher {
         margin-right: auto;
     }
+    &.dark-theme {
+        background-color: colors.$main-dark-view-2;
+        color: colors.$main-white;
+    }
 }
 
 .theme-switch {
     margin-right: auto;
-}
-
-.dark-theme {
-    background-color: colors.$main-dark-view-2;
-    color: colors.$main-white;
-}
-
-.light-theme {
-    background-color: colors.$main-white;
 }

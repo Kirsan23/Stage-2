@@ -7,7 +7,9 @@ import { DarkModeContext } from '../../components/Context';
 export function OurExpereince() {
   const { darkMode } = useContext(DarkModeContext);
   return (
-    <section className={`our-expereince ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section
+      className={`our-expereince ${darkMode ? `dark-theme` : `light-theme`}`}
+    >
       <div className='our-expereince-block'>
         <div className='our-expereince-main-block'>
           <InfoBlock
@@ -31,28 +33,60 @@ export function OurExpereince() {
         </div>
         <div className='our-expereince-right-block'>
           <div className='our-expereince-right-block-card'>
-            <h2 className='our-expereince-right-block-card-counter'>250+</h2>
-            <h5 className='our-expereince-right-block-card-text'>
+            <Typography
+              className='our-expereince-right-block-card-counter'
+              variant='h1'
+            >
+              250+
+            </Typography>
+            <Typography
+              className='our-expereince-right-block-card-text'
+              variant='h5'
+            >
               Global Customer
-            </h5>
+            </Typography>
           </div>
           <div className='our-expereince-right-block-card'>
-            <h2 className='our-expereince-right-block-card-counter'>156+</h2>
-            <h5 className='our-expereince-right-block-card-text'>
+            <Typography
+              className='our-expereince-right-block-card-counter'
+              variant='h1'
+            >
+              156+
+            </Typography>
+            <Typography
+              className='our-expereince-right-block-card-text'
+              variant='h5'
+            >
               Project Completed
-            </h5>
+            </Typography>
           </div>
           <div className='our-expereince-right-block-card'>
-            <h2 className='our-expereince-right-block-card-counter'>50+</h2>
-            <h5 className='our-expereince-right-block-card-text'>
+            <Typography
+              className='our-expereince-right-block-card-counter'
+              variant='h1'
+            >
+              50+
+            </Typography>
+            <Typography
+              className='our-expereince-right-block-card-text'
+              variant='h5'
+            >
               Team Member
-            </h5>
+            </Typography>
           </div>
           <div className='our-expereince-right-block-card'>
-            <h2 className='our-expereince-right-block-card-counter'>15+</h2>
-            <h5 className='our-expereince-right-block-card-text'>
+            <Typography
+              className='our-expereince-right-block-card-counter'
+              variant='h1'
+            >
+              15+
+            </Typography>
+            <Typography
+              className='our-expereince-right-block-card-text'
+              variant='h5'
+            >
               Our Company
-            </h5>
+            </Typography>
           </div>
         </div>
       </div>

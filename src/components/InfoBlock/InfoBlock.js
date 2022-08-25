@@ -3,7 +3,7 @@ import { Highlighter } from '../Highlighter/Highlighter';
 import { Button } from '../Button';
 
 export const InfoBlock = (props) => {
-  const { title, heading, highlight, component = 'h2', children } = props;
+  const { title, heading, highlight, component = 'h2', button, children } = props;
 
   return (
     <div className='info-block'>
@@ -15,7 +15,7 @@ export const InfoBlock = (props) => {
         component={component}
       />
       <p className='info-block-paragraph'>{children}</p>
-      <Button />
+      {button != 'none' && <Button />}
     </div>
   );
 };

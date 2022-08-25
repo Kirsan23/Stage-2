@@ -14,15 +14,10 @@
   &-main-block {
     width: 570px;
   }
-}
 
-.dark-theme {
-  background-color: colors.$main-dark-view-1;
-  color: colors.$main-white;
-}
-
-.light-theme {
-  background-color: colors.$main-white;
+  &.dark-theme {
+    background-color: colors.$main-dark-view-1;
+  }
 }
 
 // .social-block {
