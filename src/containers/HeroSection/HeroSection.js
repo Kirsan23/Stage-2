@@ -16,6 +16,9 @@ export function HeroSection() {
       className={`hero-section ${darkMode ? `dark-theme` : `light-theme`}`}
     >
       <div className='hero-section-main-block'>
+        {/* Remove unused/commented code please */}
+        {/* Remove unused/commented code please */}
+        {/* Remove unused/commented code please */}
         {/* <Typography variant='h1' component='h1'>
             We Are The Best{' '}
           </Typography>
@@ -40,6 +43,9 @@ export function HeroSection() {
           veniam consequat sunt nostrud amet.
         </InfoBlock>
       </div>
+      {/* Remove unused/commented code please */}
+      {/* Remove unused/commented code please */}
+      {/* Remove unused/commented code please */}
       {/* <Button /> */}
       <ImgPaste sectionName='hero-section' name='hero-section-img' />
       <SocialBlock />

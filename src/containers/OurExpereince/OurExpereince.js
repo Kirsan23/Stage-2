@@ -32,6 +32,7 @@ export function OurExpereince() {
           </InfoBlock>
         </div>
         <div className='our-expereince-right-block'>
+          {/* Please use array of objects and .map() function to print out similar items */}
           <div className='our-expereince-right-block-card'>
             <Typography
               className='our-expereince-right-block-card-counter'
