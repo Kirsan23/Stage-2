@@ -14,7 +14,7 @@ export const InfoBlock = (props) => {
         highlight={highlight}
         component={component}
       />
-      <p className='info-block-paragraph'>{children}</p>
+      {children && < p className='info-block-paragraph'>{children}</p>}
       {button != 'none' && <Button />}
     </div>
   );

@@ -1,0 +1,17 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.clients-feedback {
+    height: 675px;
+    margin: 0 auto 120px auto;
+
+    background: colors.$main-orange-bcg;
+  
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+}
