@@ -1,3 +1,4 @@
+// as *
 @use '../../assets/styles/variables.scss' as colors;
 
 .social-block {
@@ -20,6 +21,7 @@
 
     background-color: colors.$main-white;
     color: colors.$main-orange;
+    // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to colors.scss as well?
     box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
 
     &:last-child {

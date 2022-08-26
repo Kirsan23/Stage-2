@@ -11,6 +11,7 @@ export function App() {
   return (
     <>
       <DarkModeProvider>
+        {/* Let's create Pages directory and Homepage inside it and to import Header, etc into Homepage page  */}
         <Header />
         <HeroSection />
         <AboutUs />

@@ -1,14 +1,15 @@
+// as *
 @use '../../assets/styles/variables.scss' as colors;
 
 .info-block {
     width: 570px;
     // margin: 0 auto;
-    
+
     & h6, p {
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 400; // Why do you need spacing between properties - after font-weight?
 
-        color: colors.$main-gray;;
+        color: colors.$main-gray;; // Double semi-colon
     }
 
     &-title {
