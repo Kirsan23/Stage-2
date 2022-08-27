@@ -2,7 +2,6 @@
 
 .clients-feedback {
     height: 675px;
-    margin: 0 auto 120px auto;
 
     background: colors.$main-orange-bcg;
   
@@ -13,5 +12,9 @@
       text-align: center;
       max-width: 1300px;
       margin: 0 auto;
+    }
+
+    &.dark-theme {
+      background-color: colors.$main-dark-view-1;
     }
 }

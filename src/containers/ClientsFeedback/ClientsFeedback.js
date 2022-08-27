@@ -1,9 +1,8 @@
 import { InfoBlock } from '../../components/InfoBlock';
-import './ClientsFeedback.scss';
-import { Typography } from '../../components/Typography';
-import { ImgPaste } from '../../components/ImgPaste';
+// import { Typography } from '../../components/Typography';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
+import './ClientsFeedback.scss';
 
 export function ClientsFeedback() {
   const { darkMode } = useContext(DarkModeContext);

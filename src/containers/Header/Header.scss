@@ -7,7 +7,7 @@
     top: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     place-items: center;
 
     background-color: colors.$main-white;
@@ -19,7 +19,6 @@
 
     &-navigation {
         display: flex;
-        margin: 0 auto;
     }
 
     &-navigation-items {
@@ -31,15 +30,8 @@
         }
     }
     
-    &-switcher {
-        margin-right: auto;
-    }
     &.dark-theme {
         background-color: colors.$main-dark-view-2;
         color: colors.$main-white;
     }
-}
-
-.theme-switch {
-    margin-right: auto;
 }

@@ -19,6 +19,7 @@
     margin-bottom: 5px;
     font-size: 25px;
 
+    transition: color 0.5s, background-color 0.5s;
     background-color: colors.$main-white;
     color: colors.$main-orange;
     // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to colors.scss as well?
@@ -31,7 +32,6 @@
     &:hover {
       background-color: colors.$main-orange;
       color: colors.$main-white;
-      transition: color 0.5s, background-color 0.5s;
     }
   }
 }

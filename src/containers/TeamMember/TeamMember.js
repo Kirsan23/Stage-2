@@ -13,20 +13,19 @@ export function TeamMember() {
       className={`team-member ${darkMode ? `dark-theme` : `light-theme`}`}
     >
       <div className='team-member-block'>
-        {/* Can we close InfoBlock tag in another way? */}
         <InfoBlock
           title='Team Member'
           heading='We Have Some Awesome People'
           highlight='Some Awesome'
           button='none'
-        ></InfoBlock>
+        />
         <div className='team-member-bottom-block'>
           {/* Please use array of objects and .map() function to print out similar items */}
           <div className='team-member-bottom-block-card'>
             <div className='team-member-bottom-block-card-top'>
               <ImgPaste
                 sectionName='team-member-bottom-block-card'
-                name='Gustavo Herwitz' // No space in image names. Bad - 'ivan dorn.png'. Good - 'ivan-dorn.png'
+                name='Gustavo-Herwitz'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
@@ -52,7 +51,7 @@ export function TeamMember() {
             <div className='team-member-bottom-block-card-top'>
               <ImgPaste
                 sectionName='team-member-bottom-block-card'
-                name='Phillip Curtis' // No space in image names. Bad - 'ivan dorn.png'. Good - 'ivan-dorn.png'
+                name='Phillip-Curtis'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
@@ -78,7 +77,7 @@ export function TeamMember() {
             <div className='team-member-bottom-block-card-top'>
               <ImgPaste // Can we use regular <img /> here. Additional component requires additional memory
                 sectionName='team-member-bottom-block-card'
-                name='Talan Torff' // No space in image names. Bad - 'ivan dorn.png'. Good - 'ivan-dorn.png'
+                name='Talan-Torff'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
@@ -104,7 +103,7 @@ export function TeamMember() {
             <div className='team-member-bottom-block-card-top'>
               <ImgPaste
                 sectionName='team-member-bottom-block-card'
-                name='Abram Vaccaro' // No space in image names. Bad - 'ivan dorn.png'. Good - 'ivan-dorn.png'
+                name='Abram-Vaccaro'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>

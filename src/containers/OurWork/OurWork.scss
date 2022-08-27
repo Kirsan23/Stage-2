@@ -1,7 +1,8 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .our-work {
-  margin: 0 auto 120px auto;
+
+  padding: 120px 0;
 
   &-block {
     display: flex;
@@ -43,5 +44,9 @@
     &-img {
         width: 100%;
     }
+  }
+
+  &.dark-theme {
+    background-color: colors.$main-dark-view-1;
   }
 }
