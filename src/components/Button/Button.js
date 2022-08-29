@@ -9,5 +9,3 @@ export const Button = (props) => {
     </button>
   );
 };
-
-// Describe PropTypes here please

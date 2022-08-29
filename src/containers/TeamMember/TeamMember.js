@@ -1,10 +1,10 @@
 import { InfoBlock } from '../../components/InfoBlock';
-import './TeamMember.scss';
 import { Typography } from '../../components/Typography';
-import { ImgPaste } from '../../components/ImgPaste';
 import { SocialBlock } from '../../components/SocialBlock';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
+import './TeamMember.scss';
+import { ForTest } from '../../components/ForTest';
 
 export function TeamMember() {
   const { darkMode } = useContext(DarkModeContext);
@@ -20,40 +20,28 @@ export function TeamMember() {
           button='none'
         />
         <div className='team-member-bottom-block'>
-          {/* Please use array of objects and .map() function to print out similar items */}
-          <div className='team-member-bottom-block-card'>
-            <div className='team-member-bottom-block-card-top'>
-              <ImgPaste
-                sectionName='team-member-bottom-block-card'
-                name='Gustavo-Herwitz'
-              />
-              <SocialBlock className='team-member-bottom-block-card-social' />
-            </div>
-            <div className='team-member-bottom-block-card-bottom'>
-              <Typography
-                className='team-member-bottom-block-card-bottom-name'
-                component='h5'
-                variant='h5'
-              >
-                Gustavo Herwitz
-              </Typography>
-              <Typography
-                className='team-member-bottom-block-card-bottom-prof'
-                component='h6'
-                variant='h6'
-                color='gray'
-              >
-                UI/UX Designer
-              </Typography>
-            </div>
+          <ForTest />
+        </div>
+      </div>
+      {/* <div className='team-member-block'>
+        <InfoBlock
+          title='Team Member'
+          heading='We Have Some Awesome People'
+          highlight='Some Awesome'
+          button='none'
+        />
+        <div className='team-member-bottom-block'>
+          <div className='team-member-bottom-block'>
+            <ForTest />
+            <SocialBlock className='team-member-bottom-block-card-social' />
           </div>
           <div className='team-member-bottom-block-card'>
             <div className='team-member-bottom-block-card-top'>
-              <ImgPaste
-                sectionName='team-member-bottom-block-card'
-                name='Phillip-Curtis'
+              <img
+                className='team-member-bottom-block-card-img'
+                src={require(`../../img/Phillip-Curtis.png`)}
+                alt='Oh...'
               />
-              <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
             <div className='team-member-bottom-block-card-bottom'>
               <Typography
@@ -75,9 +63,10 @@ export function TeamMember() {
           </div>
           <div className='team-member-bottom-block-card'>
             <div className='team-member-bottom-block-card-top'>
-              <ImgPaste // Can we use regular <img /> here. Additional component requires additional memory
-                sectionName='team-member-bottom-block-card'
-                name='Talan-Torff'
+              <img
+                className='team-member-bottom-block-card-img'
+                src={require(`../../img/Talan-Torff.png`)}
+                alt='Oh...'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
@@ -101,9 +90,10 @@ export function TeamMember() {
           </div>
           <div className='team-member-bottom-block-card'>
             <div className='team-member-bottom-block-card-top'>
-              <ImgPaste
-                sectionName='team-member-bottom-block-card'
-                name='Abram-Vaccaro'
+              <img
+                className='team-member-bottom-block-card-img'
+                src={require(`../../img/Abram-Vaccaro.png`)}
+                alt='Oh...'
               />
               <SocialBlock className='team-member-bottom-block-card-social' />
             </div>
@@ -126,7 +116,7 @@ export function TeamMember() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from '../Button'; // unused import
 import { DarkModeContext } from '../Context';
 
 export function ThemeSwitch() {

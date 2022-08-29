@@ -28,7 +28,7 @@ export const Highlighter = (props) => {
         >
           {part}
         </span>
-      ))}{' '}
+      ))}
       {/* Why do you need this extra spacing? Please remove it */}
     </Tag>
   );

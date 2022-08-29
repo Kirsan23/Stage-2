@@ -2,7 +2,7 @@
 
 .about-us {
   background-color: colors.$main-white;
-    padding: 120px 0;
+  padding: 120px 0;
 
   &-block {
     max-width: 1300px;
@@ -39,7 +39,33 @@
       }
 
       &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 70px;
+        height: 70px;
         margin: 25px 100px 35px 100px;
+        border-radius: 45px;
+        padding: 20px;
+        font-size: 25px;
+        color: colors.$main-white;
+
+        &.orange {
+          background-color: colors.$main-orange;
+        }
+
+        &.gray {
+          background-color: colors.$main-gray;
+        }
+
+        &.blue {
+          background-color: #00acff;
+        }
+
+        &.black {
+          background-color: colors.$main-black;
+        }
       }
 
       &-text {

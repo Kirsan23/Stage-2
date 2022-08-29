@@ -1,6 +1,4 @@
-import { Button } from '../../components/Button';
 import { Typography } from '../../components/Typography';
-import { ImgPaste } from '../../components/ImgPaste';
 import { InfoBlock } from '../../components/InfoBlock';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
@@ -12,7 +10,7 @@ export function AboutUs() {
     <section className={`about-us ${darkMode ? `dark-theme` : `light-theme`}`}>
       <div className='about-us-block'>
         <div className='about-us-top-block'>
-          <ImgPaste sectionName='about-us' name='about-us-img'></ImgPaste>
+          <img className='about-us-img' src={require(`../../img/about-us-img.png`)} alt='Oh...'/>
           <div className='about-us-main-block'>
             <InfoBlock
               title='About Us'
@@ -38,12 +36,8 @@ export function AboutUs() {
         <div className='about-us-bottom-block'>
           {/* Please use array of objects and .map() function to print out similar items */}
           <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button'>
-              {/* Why do you think icon in these cards are buttons? I think it's regular icons */}
-              <Button variant='circular'>
-                {/* Can we pass 'icon' prop into button so button will render icon/span inside? */}
-                <span className='icon-file-line'/>
-              </Button>
+            <div className='about-us-bottom-block-card-button orange'>
+              <span className='icon-file-line'/>
             </div>
             <div className='about-us-bottom-block-card-text'>
               <Typography>
@@ -54,11 +48,8 @@ export function AboutUs() {
             </div>
           </div>
           <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button'>
-              <Button variant='circular' color='gray'>
-                {/* Can we pass 'icon' prop into button so button will render icon/span inside? */}
-                <span className='icon-code-line'/>
-              </Button>
+            <div className='about-us-bottom-block-card-button gray'>
+            <span className='icon-code-line'/>
             </div>
             <div className='about-us-bottom-block-card-text'>
               <Typography>
@@ -68,11 +59,8 @@ export function AboutUs() {
             </div>
           </div>
           <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button'>
-              <Button variant='circular' color='blue'>
-                {/* Can we pass 'icon' prop into button so button will render icon/span inside? */}
-                <span className='icon-settings-4-line'/>
-              </Button>
+            <div className='about-us-bottom-block-card-button blue'>
+            <span className='icon-settings-4-line'/>
             </div>
             <div className='about-us-bottom-block-card-text'>
               <Typography>
@@ -83,11 +71,8 @@ export function AboutUs() {
             </div>
           </div>
           <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button'>
-              <Button variant='circular' color='black'>
-                {/* Can we pass 'icon' prop into button so button will render icon/span inside? */}
-                <span className='icon-share-box-line'/>
-              </Button>
+            <div className='about-us-bottom-block-card-button black'>
+            <span className='icon-share-box-line'/>
             </div>
             <div className='about-us-bottom-block-card-text'>
               <Typography>

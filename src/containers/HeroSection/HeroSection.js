@@ -1,4 +1,3 @@
-import { ImgPaste } from '../../components/ImgPaste/ImgPaste';
 import { SocialBlock } from '../../components/SocialBlock/SocialBlock';
 import { InfoBlock } from '../../components/InfoBlock';
 import { useContext } from 'react';
@@ -22,7 +21,7 @@ export function HeroSection() {
           veniam consequat sunt nostrud amet.
         </InfoBlock>
       </div>
-      <ImgPaste sectionName='hero-section' name='hero-section-img' />
+      <img className='hero-section-img' src={require(`../../img/hero-section-img.png`)} alt='Oh...'/>
       <SocialBlock />
     </section>
   );
