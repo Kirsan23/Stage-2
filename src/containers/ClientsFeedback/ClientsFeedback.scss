@@ -12,9 +12,49 @@
       text-align: center;
       max-width: 1300px;
       margin: 0 auto;
+
+      &-slider {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        width: 1000px;
+        height: 200px;
+
+        &-item-1 {
+          // position: absolute;
+          width: 900px;
+          height: 150px;
+          background-color: black;
+          transition: transform 0.5s;
+
+          &.test-1 {
+            transform: translateX(950px);
+          }
+        }
+
+        &-item-2 {
+          display: none;
+          // position: absolute;
+          width: 900px;
+          height: 150px;
+          background-color: rgb(141, 67, 67);
+        }
+
+        &-item-3 {
+          display: none;
+          // position: absolute;
+          width: 900px;
+          height: 150px;
+          background-color: rgb(109, 109, 109);
+        }
+      }
     }
 
     &.dark-theme {
       background-color: colors.$main-dark-view-1;
     }
+}
+
+.button {
+  width: 500px;
 }

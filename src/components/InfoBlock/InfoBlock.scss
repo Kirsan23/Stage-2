@@ -7,9 +7,8 @@
 
     & h6, p {
         font-size: 16px;
-        font-weight: 400; // Why do you need spacing between properties - after font-weight?
-
-        color: colors.$main-gray;; // Double semi-colon
+        font-weight: 400;
+        color: colors.$main-gray;
     }
 
     &-title {

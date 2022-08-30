@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import './OurWork.scss';
 
-export function OurWork() {
+export const OurWork = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <section className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`}>

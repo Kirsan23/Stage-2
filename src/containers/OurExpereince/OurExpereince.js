@@ -4,8 +4,30 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import './OurExpereince.scss';
 
-export function OurExpereince() {
+export const OurExpereince = () => {
   const { darkMode } = useContext(DarkModeContext);
+  const cards = [
+    {
+      id: 1,
+      counter: '250+',
+      text: 'Global Customer',
+    },
+    {
+      id: 2,
+      counter: '156+',
+      text: 'Project Completed',
+    },
+    {
+      id: 3,
+      counter: '50+',
+      text: 'Team Member',
+    },
+    {
+      id: 4,
+      counter: '15+',
+      text: 'Our Company',
+    },
+  ];
   return (
     <section
       className={`our-expereince ${darkMode ? `dark-theme` : `light-theme`}`}
@@ -32,63 +54,23 @@ export function OurExpereince() {
           </InfoBlock>
         </div>
         <div className='our-expereince-right-block'>
-          {/* Please use array of objects and .map() function to print out similar items */}
-          <div className='our-expereince-right-block-card'>
-            <Typography
-              className='our-expereince-right-block-card-counter'
-              variant='h1'
-            >
-              250+
-            </Typography>
-            <Typography
-              className='our-expereince-right-block-card-text'
-              variant='h5'
-            >
-              Global Customer
-            </Typography>
-          </div>
-          <div className='our-expereince-right-block-card'>
-            <Typography
-              className='our-expereince-right-block-card-counter'
-              variant='h1'
-            >
-              156+
-            </Typography>
-            <Typography
-              className='our-expereince-right-block-card-text'
-              variant='h5'
-            >
-              Project Completed
-            </Typography>
-          </div>
-          <div className='our-expereince-right-block-card'>
-            <Typography
-              className='our-expereince-right-block-card-counter'
-              variant='h1'
-            >
-              50+
-            </Typography>
-            <Typography
-              className='our-expereince-right-block-card-text'
-              variant='h5'
-            >
-              Team Member
-            </Typography>
-          </div>
-          <div className='our-expereince-right-block-card'>
-            <Typography
-              className='our-expereince-right-block-card-counter'
-              variant='h1'
-            >
-              15+
-            </Typography>
-            <Typography
-              className='our-expereince-right-block-card-text'
-              variant='h5'
-            >
-              Our Company
-            </Typography>
-          </div>
+          {cards.map(({ id, counter, text }) => (
+            <div key={id} className='our-expereince-right-block-card'>
+              <Typography
+                className='our-expereince-right-block-card-counter'
+                variant='h1'
+              >
+                {counter}
+              </Typography>
+              <Typography
+                className='our-expereince-right-block-card-text'
+                variant='h5'
+                color='gray'
+              >
+                {text}
+              </Typography>
+            </div>
+          ))}
         </div>
       </div>
     </section>

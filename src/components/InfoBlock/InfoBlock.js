@@ -16,13 +16,13 @@ export const InfoBlock = (props) => {
     <div className='info-block'>
       {title && <h6 className='info-block-title'>{title}</h6>}
       <Highlighter
-        clsName='info-block-highlighter'
+        className='info-block-highlighter'
         heading={heading}
         highlight={highlight}
         component={component}
       />
       {children && <p className='info-block-paragraph'>{children}</p>}
-      {button != 'none' && <Button />}
+      {button !== 'none' && <Button />}
     </div>
   );
 };

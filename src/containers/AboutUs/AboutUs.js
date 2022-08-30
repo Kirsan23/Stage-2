@@ -4,13 +4,43 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import './AboutUs.scss';
 
-export function AboutUs() {
+export const AboutUs = () => {
   const { darkMode } = useContext(DarkModeContext);
+  const cards = [
+    {
+      id: 1,
+      text: 'World leader in consulting and finance',
+      icon: 'icon-file-line',
+      color: 'orange',
+    },
+    {
+      id: 2,
+      text: 'A focused team with a specialized skill',
+      icon: 'icon-code-line',
+      color: 'gray',
+    },
+    {
+      id: 3,
+      text: 'Trusted and professional advisors for you',
+      icon: 'icon-settings-4-line',
+      color: 'blue',
+    },
+    {
+      id: 4,
+      text: 'Experience to give you a better results',
+      icon: 'icon-share-box-line',
+      color: 'black',
+    },
+  ];
   return (
     <section className={`about-us ${darkMode ? `dark-theme` : `light-theme`}`}>
       <div className='about-us-block'>
         <div className='about-us-top-block'>
-          <img className='about-us-img' src={require(`../../img/about-us-img.png`)} alt='Oh...'/>
+          <img
+            className='about-us-img'
+            src={require(`../../img/about-us-img.png`)}
+            alt='Oh...'
+          />
           <div className='about-us-main-block'>
             <InfoBlock
               title='About Us'
@@ -34,55 +64,18 @@ export function AboutUs() {
           </div>
         </div>
         <div className='about-us-bottom-block'>
-          {/* Please use array of objects and .map() function to print out similar items */}
-          <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button orange'>
-              <span className='icon-file-line'/>
+          {cards.map(({ id, text, icon, color }) => (
+            <div key={id} className='about-us-bottom-block-card'>
+              <div className={`about-us-bottom-block-card-button ${color}`}>
+                <span className={`${icon}`} />
+              </div>
+              <div className='about-us-bottom-block-card-text'>
+                <Typography>{text}</Typography>
+              </div>
             </div>
-            <div className='about-us-bottom-block-card-text'>
-              <Typography>
-                World leader in consulting
-                <br /> {/* No <br> please! */}
-                and finance
-              </Typography>
-            </div>
-          </div>
-          <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button gray'>
-            <span className='icon-code-line'/>
-            </div>
-            <div className='about-us-bottom-block-card-text'>
-              <Typography>
-                A focused team with a<br /> {/* No <br> please! */}
-                specialized skill
-              </Typography>
-            </div>
-          </div>
-          <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button blue'>
-            <span className='icon-settings-4-line'/>
-            </div>
-            <div className='about-us-bottom-block-card-text'>
-              <Typography>
-                Trusted and professional
-                <br /> {/* No <br> please! */}
-                advisors for you
-              </Typography>
-            </div>
-          </div>
-          <div className='about-us-bottom-block-card'>
-            <div className='about-us-bottom-block-card-button black'>
-            <span className='icon-share-box-line'/>
-            </div>
-            <div className='about-us-bottom-block-card-text'>
-              <Typography>
-                Experience to give you a<br /> {/* No <br> please! */}
-                better results
-              </Typography>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};

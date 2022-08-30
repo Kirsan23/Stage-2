@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import './HeroSection.scss';
 
-export function HeroSection() {
+export const HeroSection = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <section

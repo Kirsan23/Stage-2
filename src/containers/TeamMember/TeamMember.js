@@ -5,7 +5,7 @@ import { SocialBlock } from '../../components/SocialBlock';
 import { Typography } from '../../components/Typography';
 import './TeamMember.scss';
 
-export function TeamMember() {
+export const TeamMember = () => {
   const { darkMode } = useContext(DarkModeContext);
   const users = [
     {
