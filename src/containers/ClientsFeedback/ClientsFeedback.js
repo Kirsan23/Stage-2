@@ -6,10 +6,11 @@ import './ClientsFeedback.scss';
 
 export const ClientsFeedback = () => {
   const { darkMode } = useContext(DarkModeContext);
-  const [isActive, setIsActive] = useState(false);
+  const [count, setCount] = useState(0);
   const handleClick = () => {
-    setIsActive((current) => !current);
+    count < items.length - 1 ? setCount(count + 1) : setCount(0);
   };
+  const items = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}];
 
   return (
     <section
@@ -23,26 +24,15 @@ export const ClientsFeedback = () => {
           button='none'
         ></InfoBlock>
         <div className='clients-feedback-block-slider'>
-          <div
-            className={`${'clients-feedback-block-slider-item-1'} ${
-              isActive ? 'test-1' : ''
-            }`}
-          ></div>
-          <div
-            className={`${'clients-feedback-block-slider-item-2'} ${
-              isActive ? 'test-2' : ''
-            }`}
-          ></div>
-          <div
-            className={`${'clients-feedback-block-slider-item-3'} ${
-              isActive ? 'test-3' : ''
-            }`}
-          ></div>
+        {items.map(({ id }) => (
+            <div key={id} className={`clients-feedback-block-slider-item${`-${id}`} ${
+              count === id - 1 ? 'visible' : count === id ? 'invisible-post' : 'invisible-pre'
+            }`}>
+            </div>
+          ))}
         </div>
         <div className='button'>
-          <button className='' onClick={handleClick}>
-            Test
-          </button>
+          <button onClick={handleClick}>Test</button>
         </div>
       </div>
     </section>
