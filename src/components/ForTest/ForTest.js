@@ -1,8 +1,7 @@
 import { SocialBlock } from '../SocialBlock';
 import { Typography } from '../Typography';
 
-export function ForTest(props) {
-  const { className } = props;
+export function ForTest() {
   const users = [
     {
       id: 1,
@@ -56,7 +55,7 @@ export function ForTest(props) {
             </Typography>
           </div>
         </div>
-      ))}
+      ))};
     </>
   );
-}
+};

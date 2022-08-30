@@ -2,11 +2,19 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .social-block {
-  position: fixed;
-  right: 0;
-  width: 40px;
-  display: flex;
-  flex-wrap: wrap;
+  &.vertical {
+    position: fixed;
+    right: 0;
+    width: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.horizontal {
+    position: fixed;
+    right: 120px;
+    display: flex;
+  }
 
   &-icon {
     box-sizing: border-box;

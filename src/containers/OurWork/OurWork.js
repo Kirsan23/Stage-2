@@ -1,9 +1,8 @@
 import { InfoBlock } from '../../components/InfoBlock';
-import './OurWork.scss';
 import { Typography } from '../../components/Typography';
-import { ImgPaste } from '../../components/ImgPaste';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
+import './OurWork.scss';
 
 export function OurWork() {
   const { darkMode } = useContext(DarkModeContext);
@@ -52,16 +51,40 @@ export function OurWork() {
         </div>
         <div className='our-work-main-block'>
           <div className='our-work-main-block-imgs'>
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg1' />
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg4' />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg1.png`)}
+              alt='Oh...'
+            />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg4.png`)}
+              alt='Oh...'
+            />
           </div>
           <div className='our-work-main-block-imgs'>
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg2' />
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg5' />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg2.png`)}
+              alt='Oh...'
+            />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg5.png`)}
+              alt='Oh...'
+            />
           </div>
           <div className='our-work-main-block-imgs'>
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg3' />
-            <ImgPaste sectionName='our-work-main-block' name='OurWorkImg6' />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg3.png`)}
+              alt='Oh...'
+            />
+            <img
+              className='our-work-main-block-img'
+              src={require(`../../img/OurWorkImg6.png`)}
+              alt='Oh...'
+            />
           </div>
         </div>
       </div>

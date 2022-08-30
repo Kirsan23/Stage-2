@@ -1,17 +1,31 @@
+import PropTypes from 'prop-types';
 import './SocialBlock.scss';
 
 export const SocialBlock = (props) => {
-  // Can we pass 'direction' prop here to determine - vertical or horizontal? Instead of className
-  // So component will be more flexible
-  const { className = '' } = props;
+  const { className = '', direction = 'vertical' } = props;
+  const socialIcons = [
+    { id: 1, icon: 'icon-facebook-fill' },
+    { id: 1, icon: 'icon-instagram-fill' },
+    { id: 1, icon: 'icon-twitter-fill' },
+    { id: 1, icon: 'icon-skype-fill' },
+  ];
 
   return (
-    <div className={className ? `${className}` : 'social-block'}>
-      {/* Use array objects to print social icons please */}
-      <span className='icon-facebook-fill social-block-icon'></span>
-      <span className='icon-instagram-fill social-block-icon'></span>
-      <span className='icon-twitter-fill social-block-icon'></span>
-      <span className='icon-skype-fill social-block-icon'></span>
+    <div
+      className={`${className ? `${className}` : 'social-block'} ${
+        { direction } === 'horizontal' ? 'horizontal' : 'vertical'
+      }`}
+    >
+      {socialIcons.map(({ id, icon }) => (
+        <div key={id} className='social-block-icon'>
+          <span key={id} className={`${icon} 'social-block-icon'`}></span>
+        </div>
+      ))}
     </div>
   );
+};
+
+SocialBlock.propTypes = {
+  direction: PropTypes.oneOf(['vertical', 'horizontal']),
+  className: PropTypes.string,
 };
