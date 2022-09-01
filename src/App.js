@@ -6,6 +6,7 @@ import { ThemeProvider } from './components/Context';
 import { TeamMember } from './containers/TeamMember/TeamMember';
 import { OurWork } from './containers/OurWork';
 import { ClientsFeedback } from './containers/ClientsFeedback';
+import { OurBlog } from './containers/OurBlog';
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
         <TeamMember />
         <OurWork />
         <ClientsFeedback />
+        <OurBlog />
       </ThemeProvider>
     </>
   );

@@ -1,0 +1,15 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.our-blog {
+    display: flex;
+}
+
+.main-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 1300px;
+    margin: 120px auto;
+}

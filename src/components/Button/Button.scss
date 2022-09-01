@@ -30,14 +30,3 @@
     background-color: colors.$main-black;
   }
 }
-
-.circular {
-  border-radius: 45px;
-  padding: 20px;
-  font-size: 25px;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
-  }
-}

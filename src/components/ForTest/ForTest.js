@@ -1,61 +1,39 @@
 import { SocialBlock } from '../SocialBlock';
 import { Typography } from '../Typography';
+import { useState } from 'react';
+import './ForTest.scss';
 
-export function ForTest() {
-  const users = [
-    {
-      id: 1,
-      name: 'Gustavo Herwitz',
-      position: 'UI/UX Designer',
-      photo: require('../../img/Gustavo-Herwitz.png'),
-    },
-    {
-      id: 2,
-      name: 'Phillip Curtis',
-      position: 'Graphic Designer',
-      photo: require('../../img/Phillip-Curtis.png'),
-    },
-    {
-      id: 3,
-      name: 'Talan Torff',
-      position: 'Web Developer',
-      photo: require('../../img/Talan-Torff.png'),
-    },
-    {
-      id: 4,
-      name: 'Abram Vaccaro',
-      position: 'App Developer',
-      photo: require('../../img/Abram-Vaccaro.png'),
-    },
-  ];
+export function ForTest(props) {
+  const [count, setCount] = useState(0);
+  const { children } = props;
+  const handleClick = (val) => {
+    if (val === 'prev') {
+      count > 0 ? setCount(count - 1) : setCount(children.length);
+    } else if (val === 'main') {
+      setCount(0);
+    } else if (val === 'next') {
+      count < children.length - 1 ? setCount(count + 1) : setCount(0);
+    }
+  };
 
   return (
-    <>
-      {users.map(({ id, name, position, photo }) => (
-        <div key={id} className='team-member-bottom-block-card'>
-          <div className='team-member-bottom-block-card-top'>
-            <img className='team-member-bottom-block-card-img' src={photo} alt='Oh...'></img>
-            <SocialBlock className='team-member-bottom-block-card-social' />
-          </div>
-          <div className='team-member-bottom-block-card-bottom'>
-            <Typography
-              className='team-member-bottom-block-card-bottom-name'
-              component='h5'
-              variant='h5'
-            >
-              {name}
-            </Typography>
-            <Typography
-              className='team-member-bottom-block-card-bottom-prof'
-              component='h6'
-              variant='h6'
-              color='gray'
-            >
-              {position}
-            </Typography>
-          </div>
-        </div>
-      ))};
-    </>
+    <div className='wrapper1'>
+      <div className='slider'>
+        {children.map((children, id) => (
+          <div key={id} className={`slide-${id+1} ${
+            count === id - 1
+              ? 'visible'
+              : count === id
+              ? 'invisible-post'
+              : 'invisible-pre'
+          }`}>{children}</div>
+        ))}
+      </div>
+      <div className='btns'>
+        <button className='prev' onClick={() => handleClick('prev')}></button>
+        <button className='main' onClick={() => handleClick('main')}></button>
+        <button className='next' onClick={() => handleClick('next')}></button>
+      </div>
+    </div>
   );
-};
+}
