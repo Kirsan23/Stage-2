@@ -1,7 +1,7 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .clients-feedback {
-  height: 675px;
+  height: 640px;
   display: flex;
   background: colors.$main-orange-bcg;
 
@@ -17,18 +17,31 @@
   align-items: center;
   text-align: center;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 60px auto;
 }
 
 .review-card {
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 470px;
   height: 250px;
+  padding: 35px 65px;
+  text-align: left;
   background-color: colors.$main-orange;
 
   &-photo {
     position: absolute;
-    transform: translate(-275px, 20px);
+    transform: translate(-105px, -55px);
     z-index: 1;
+  }
+
+  &-name {
+    margin-bottom: 10px;
+  }
+
+  &-position {
+    margin-bottom: 20px;
   }
 }

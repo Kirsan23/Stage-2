@@ -2,8 +2,8 @@ import { InfoBlock } from '../../components/InfoBlock';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import { Typography } from '../../components/Typography';
+import { Slider } from '../../components/Slider/';
 import './ClientsFeedback.scss';
-import { ForTest } from '../../components/ForTest';
 
 export const ClientsFeedback = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -61,7 +61,7 @@ export const ClientsFeedback = () => {
           highlight='Great Words'
           button='none'
         ></InfoBlock>
-        <ForTest>
+        <Slider>
         {reviews.map(({ id, name, position, photo, review }) => (
               <div key={id} className='review-card'>
                 <img
@@ -94,7 +94,7 @@ export const ClientsFeedback = () => {
                 </Typography>
               </div>
           ))}
-        </ForTest>
+        </Slider>
       </div>
     </section>
   );

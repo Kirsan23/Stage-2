@@ -1,5 +1,3 @@
-import { SocialBlock } from '../SocialBlock';
-import { Typography } from '../Typography';
 import { useState } from 'react';
 import './ForTest.scss';
 
@@ -17,10 +15,10 @@ export function ForTest(props) {
   };
 
   return (
-    <div className='wrapper1'>
+    <div className='wrapper'>
       <div className='slider'>
         {children.map((children, id) => (
-          <div key={id} className={`slide-${id+1} ${
+          <div key={id} className={`slide ${
             count === id - 1
               ? 'visible'
               : count === id
