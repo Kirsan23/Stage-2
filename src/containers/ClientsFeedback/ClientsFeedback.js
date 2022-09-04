@@ -60,7 +60,7 @@ export const ClientsFeedback = () => {
           heading='Some Great Words From Our Clients'
           highlight='Great Words'
           button='none'
-        ></InfoBlock>
+        />
         <Slider>
         {reviews.map(({ id, name, position, photo, review }) => (
               <div key={id} className='review-card'>

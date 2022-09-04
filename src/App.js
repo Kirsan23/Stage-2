@@ -7,6 +7,7 @@ import { TeamMember } from './containers/TeamMember/TeamMember';
 import { OurWork } from './containers/OurWork';
 import { ClientsFeedback } from './containers/ClientsFeedback';
 import { OurBlog } from './containers/OurBlog';
+import { ContactUs } from './containers/ContactUs';
 
 export function App() {
   return (
@@ -21,6 +22,7 @@ export function App() {
         <OurWork />
         <ClientsFeedback />
         <OurBlog />
+        <ContactUs />
       </ThemeProvider>
     </>
   );

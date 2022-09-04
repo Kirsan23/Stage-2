@@ -1,0 +1,15 @@
+@use '../../assets/styles/variables.scss' as colors;
+
+.contacts {
+    display: flex;
+
+    &-card {
+        display: flex;
+        width: 370px;
+        height: 230px;
+
+        &-top {
+            display: flex;
+        }
+    }
+}
