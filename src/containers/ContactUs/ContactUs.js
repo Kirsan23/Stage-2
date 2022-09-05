@@ -2,6 +2,7 @@ import { InfoBlock } from '../../components/InfoBlock';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../components/Context';
 import { Typography } from '../../components/Typography';
+import { Highlighter } from '../../components//Highlighter';
 import './ContactUs.scss';
 
 export const ContactUs = () => {
@@ -37,24 +38,24 @@ export const ContactUs = () => {
     <section
       className={`contact-us ${darkMode ? `dark-theme` : `light-theme`}`}
     >
-      <div className='contact-us main-block'>
+      <div className='main-block'>
         <InfoBlock
-          title='Clients Feedback'
-          heading='Some Great Words From Our Clients'
-          highlight='Great Words'
+          title='Contact Us'
+          heading='Feel Free to Contact With Us'
+          highlight='Free to Contact'
           button='none'
         />
-        <div className='contacts'>
+        <div className='contacts-cards'>
           {contacts.map(
             ({ id, icon, title, contactsType, item1, item2, add }) => (
-              <div key={id} className='contacts-cards'>
-                <div className='contacts-card-top'>
+              <div key={id} className='contacts-card'>
+                <div className='card-top'>
                   <div className='card-top-icon'>
                     <span className={`${icon}`} />
                   </div>
                   <div className='card-title'>
                     <Typography
-                      className='contacts-card-title'
+                      className='card-title'
                       component='h4'
                       variant='h4'
                       color='orange'
@@ -62,7 +63,7 @@ export const ContactUs = () => {
                       {title}
                     </Typography>
                     <Typography
-                      className='contacts-card-contactsType'
+                      className='card-contactsType'
                       component='h3'
                       variant='h3'
                     >
@@ -70,9 +71,9 @@ export const ContactUs = () => {
                     </Typography>
                   </div>
                 </div>
-                <div className='contacts-bottom'>
+                <div className='card-bottom'>
                   <Typography
-                    className='contacts-card-item1'
+                    className='card-item1'
                     component='h5'
                     variant='h5'
                     color='gray'
@@ -80,8 +81,7 @@ export const ContactUs = () => {
                     {item1}
                     {add && (
                       <Typography
-                        className='contacts-card-add'
-
+                        className='card-add'
                         variant='h5'
                         color='orange'
                       >
@@ -91,7 +91,7 @@ export const ContactUs = () => {
                   </Typography>
                   {item2 && (
                     <Typography
-                      className='contacts-card-item2'
+                      className='card-item2'
                       component='h5'
                       variant='h5'
                       color='gray'
@@ -103,6 +103,28 @@ export const ContactUs = () => {
               </div>
             )
           )}
+        </div>
+        <div className='feedback_block'>
+          <img
+            className='feedback_block-img'
+            src={require(`../../img/ContactUs.png`)}
+            alt='Oh...'
+          />
+          <div className='feedback_form'>
+            <Highlighter
+              heading='Feel Free to Contact With Us'
+              highlight='Free to Contact'
+              className='feedback_form-title'
+            />
+            <form className='feedback_form-data_fields'>
+              <input type='text' placeholder='Name' className='data_field name'></input>
+              <input type='email' placeholder='Email' className='data_field email'></input>
+              <input type='tel' placeholder='Mobile No' className='data_field tel'></input>
+              <input type='text' placeholder='Subject' className='data_field subject'></input>
+              <input type='text' placeholder='Send Massage' className='data_field massage'></input>
+              <input type='submit' value='Send Massage' className='btn'></input>
+            </form>
+          </div>
         </div>
       </div>
     </section>
