@@ -54,10 +54,12 @@
 
 .feedback_block {
   display: flex;
+  transform: translateX(-65px);
 
   &-img {
     height: max-content;
     margin-top: 65px;
+    transform: translateX(55px);
   }
 }
 

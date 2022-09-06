@@ -117,11 +117,31 @@ export const ContactUs = () => {
               className='feedback_form-title'
             />
             <form className='feedback_form-data_fields'>
-              <input type='text' placeholder='Name' className='data_field name'></input>
-              <input type='email' placeholder='Email' className='data_field email'></input>
-              <input type='tel' placeholder='Mobile No' className='data_field tel'></input>
-              <input type='text' placeholder='Subject' className='data_field subject'></input>
-              <input type='text' placeholder='Send Massage' className='data_field massage'></input>
+              <input
+                type='text'
+                placeholder='Name'
+                className='data_field name'
+              ></input>
+              <input
+                type='email'
+                placeholder='Email'
+                className='data_field email'
+              ></input>
+              <input
+                type='tel'
+                placeholder='Mobile No'
+                className='data_field tel'
+              ></input>
+              <input
+                type='text'
+                placeholder='Subject'
+                className='data_field subject'
+              ></input>
+              <input
+                type='text'
+                placeholder='Send Massage'
+                className='data_field massage'
+              ></input>
               <input type='submit' value='Send Massage' className='btn'></input>
             </form>
           </div>

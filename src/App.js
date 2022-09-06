@@ -8,6 +8,7 @@ import { OurWork } from './containers/OurWork';
 import { ClientsFeedback } from './containers/ClientsFeedback';
 import { OurBlog } from './containers/OurBlog';
 import { ContactUs } from './containers/ContactUs';
+import { Map } from './containers/Map';
 
 export function App() {
   return (
@@ -23,6 +24,7 @@ export function App() {
         <ClientsFeedback />
         <OurBlog />
         <ContactUs />
+        <Map />
       </ThemeProvider>
     </>
   );
