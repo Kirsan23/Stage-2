@@ -9,6 +9,7 @@ import { ClientsFeedback } from './containers/ClientsFeedback';
 import { OurBlog } from './containers/OurBlog';
 import { ContactUs } from './containers/ContactUs';
 import { Map } from './containers/Map';
+import { Footer } from './containers/Footer';
 
 export function App() {
   return (
@@ -25,6 +26,7 @@ export function App() {
         <OurBlog />
         <ContactUs />
         <Map />
+        <Footer />
       </ThemeProvider>
     </>
   );

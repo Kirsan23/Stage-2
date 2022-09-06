@@ -1,7 +1,18 @@
 @use '../../assets/styles/variables.scss' as colors;
 
-.main-block {
+.contactUs {
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     max-width: 1310px;
+    margin: 0 auto;
+  }
+
+  &.dark-theme {
+    background-color: colors.$main-dark-bcg;
+  }
 }
 
 .contacts {
@@ -89,6 +100,7 @@
   &.massage {
     width: 670px;
     height: 165px;
+    margin-bottom: 30px;
   }
 
   &:nth-child(odd) {

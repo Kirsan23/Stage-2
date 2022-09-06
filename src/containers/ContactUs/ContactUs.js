@@ -36,9 +36,9 @@ export const ContactUs = () => {
 
   return (
     <section
-      className={`contact-us ${darkMode ? `dark-theme` : `light-theme`}`}
+      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`}
     >
-      <div className='main-block'>
+      <div className='contactUs-wrapper'>
         <InfoBlock
           title='Contact Us'
           heading='Feel Free to Contact With Us'

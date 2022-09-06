@@ -12,6 +12,10 @@
     max-width: 1300px;
     margin: 120px auto;
   }
+
+  &.dark-theme {
+    background-color: colors.$main-dark-bcg;
+  }
 }
 
 .blog-card {
