@@ -8,6 +8,7 @@ export const InfoBlock = (props) => {
     heading,
     highlight,
     component = 'h2',
+    variant,
     button,
     children,
   } = props;
@@ -20,6 +21,7 @@ export const InfoBlock = (props) => {
         heading={heading}
         highlight={highlight}
         component={component}
+        variant={variant}
       />
       {children && <p className='info-block-paragraph'>{children}</p>}
       {button !== 'none' && <Button />}

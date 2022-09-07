@@ -7,10 +7,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
     text-align: center;
     max-width: 1300px;
     height: 360px;
     margin: 0  auto;
+  }
+
+  &-digiency {
+    width: 265px;
+    text-align: left;
   }
 }
 

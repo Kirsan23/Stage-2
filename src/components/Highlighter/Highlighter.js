@@ -4,7 +4,7 @@ import './Highlighter.scss';
 const getExp = string;
 
 export const Highlighter = (props) => {
-  const { heading, highlight, component = 'h2', className } = props;
+  const { heading, highlight, component = 'h2', className = 'highlighter', color = 'black'} = props;
   // Can we reduce numbers of usage getExp function? Do we need to use it for every title?
   const parts = heading.split(new RegExp(`(${getExp(highlight)})`, 'gi'));
   const Tag = component;
@@ -14,7 +14,7 @@ export const Highlighter = (props) => {
       {parts.map((part, i) => (
         <span
           key={i}
-          className={`highlighter ${component} ${part.toLowerCase() === highlight.toLowerCase() ? 'orange' : ''}`}
+          className={`highlighter ${component} ${part.toLowerCase() === highlight.toLowerCase() ? 'orange' : color === 'white' ? 'white' : ''}`}
         >
           {part}
         </span>

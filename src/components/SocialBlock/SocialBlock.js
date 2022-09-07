@@ -13,7 +13,7 @@ export const SocialBlock = (props) => {
   return (
     <div
       className={`${className ? `${className}` : 'social-block'} ${
-        { direction } === 'horizontal' ? 'horizontal' : 'vertical'
+        direction === 'horizontal' ? 'horizontal' : 'vertical'
       }`}
     >
       {socialIcons.map(({ id, icon }) => (

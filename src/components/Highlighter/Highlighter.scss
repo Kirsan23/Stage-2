@@ -11,8 +11,16 @@
     font-weight: 600;
   }
 
+  &.black {
+    color: $main-black;
+  }
+
   &.orange {
     color: $main-orange;
+  }
+
+  &.white {
+    color: $main-white;
   }
 }
 
