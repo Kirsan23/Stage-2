@@ -64,7 +64,7 @@ export const OurBlog = () => {
           highlight='Blogs Will Keep'
           button='none'
         ></InfoBlock>
-        <Slider>
+        <Slider height='295px'>
           {reviews.map(({ id, name, position, photo, picture, text, date }) => (
             <div key={id} className='blog-card'>
               <div className='blog-card-left'>

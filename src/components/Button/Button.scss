@@ -2,8 +2,9 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .btn {
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 13px 23px;
   font-weight: 500;
   font-size: 20px;

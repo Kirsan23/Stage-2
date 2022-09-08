@@ -1,43 +1,53 @@
 // as *
 @use '../../assets/styles/variables.scss' as colors;
 
-.social-block {
-  &-icon {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social_block {
+  &.vertical {
+    position: fixed;
+    right: 0;
     width: 40px;
-    height: 40px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.horizontal {
+    display: flex;
+  }
+}
+
+.icon {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 25px;
+  transition: color 0.5s, background-color 0.5s;
+  background-color: colors.$main-white;
+  color: colors.$main-orange;
+  // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to colors.scss as well?
+  box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
+
+  &:hover {
+    background-color: colors.$main-orange;
+    color: colors.$main-white;
+  }
+
+  &.vertical {
     margin-bottom: 5px;
-    font-size: 25px;
-    transition: color 0.5s, background-color 0.5s;
-    background-color: colors.$main-white;
-    color: colors.$main-orange;
-    // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to colors.scss as well?
-    box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    &:hover {
-      background-color: colors.$main-orange;
-      color: colors.$main-white;
+  &.horizontal {
+    margin-right: 25px;
+
+    &:last-child {
+      margin-right: 0;
     }
   }
-}
-
-.vertical {
-  position: fixed;
-  right: 0;
-  width: 40px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.horizontal {
-  right: 120px;
-  display: flex;
 }

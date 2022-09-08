@@ -19,22 +19,23 @@ export const Footer = () => {
               highlight='Digie'
               color='white'
             />
-            <Typography component='p' color='white'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit a
-              laoreet libero dis eget maecenas bibendum.
-            </Typography>
-            <SocialBlock
-              className='top-digiency-social'
-              direction='horizontal'
-            />
+            <div className='betweener'>
+              <Typography component='p' color='white'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit a
+                laoreet libero dis eget maecenas bibendum.
+              </Typography>
+              <SocialBlock direction='horizontal' />
+            </div>
           </div>
           <div className='top-company'>
             <Typography
               className='top-title'
-              variant="h2"
+              variant='h2'
               component='h2'
               color='white'
-            >Company</Typography>
+            >
+              Company
+            </Typography>
             <Typography className='top-list' color='white'>
               <ul>
                 <li>About Us</li>
@@ -48,10 +49,12 @@ export const Footer = () => {
           <div className='top-services'>
             <Typography
               className='top-title'
-              variant="h2"
+              variant='h2'
               component='h2'
               color='white'
-            >Sevices</Typography>
+            >
+              Sevices
+            </Typography>
             <Typography className='top-list' color='white'>
               <ul>
                 <li>Graphic Design</li>
@@ -65,14 +68,28 @@ export const Footer = () => {
           <div className='top-newsletter'>
             <Typography
               className='top-title'
-              variant="h2"
+              variant='h2'
               component='h2'
               color='white'
-            >Newsletter</Typography>
-            <Typography component='p' color='white'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              eget varius viverra in.
+            >
+              Newsletter
             </Typography>
+            <div className='betweener'>
+              <Typography component='p' color='white'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                eget varius viverra in.
+              </Typography>
+              <form className='newsletter_from'>
+                <input
+                  type='email'
+                  placeholder='info@gmail.com'
+                  className='top-newsletter-email'
+                />
+                <button type='submit' className='submit_btn btn'>
+                  <span className='icon-send-plane-fill' />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -85,7 +102,7 @@ export const Footer = () => {
             </Typography>
           </div>
           <div className='bottom-text'>
-            <span className='icon-arrow-up-fill'></span>
+            <span className='icon-arrow-up-fill' />
           </div>
         </div>
       </div>

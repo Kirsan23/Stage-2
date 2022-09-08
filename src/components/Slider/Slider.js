@@ -3,7 +3,7 @@ import './Slider.scss';
 
 export const Slider = (props) => {
   const [count, setCount] = useState(0);
-  const { children } = props;
+  const { children, height = '250px' } = props;
   const handleClick = (val) => {
     if (val === 'prev') {
       count > 0 ? setCount(count - 1) : setCount(children.length - 1);
@@ -16,12 +16,12 @@ export const Slider = (props) => {
 
   return (
     <div className='wrapper'>
-      <div className='slider'>
+      <div className='slider' style={{height: `${height}`}}>
         {children.map((children, id) => (
           <div key={id} className={`slide ${
             count === id
               ? 'visible'
-              : count === id + 1
+              : count > id
               ? 'invisible-post'
               : 'invisible-pre'
           }`}>{children}</div>
