@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables.scss' as *;
+@use '../../assets/styles/variables.scss' as colors;
 
 .highlighter {
   &.h1 {
@@ -12,16 +12,18 @@
   }
 
   &.black {
-    color: $main-black;
+    color: colors.$main-black;
   }
 
   &.orange {
-    color: $main-orange;
+    color: colors.$main-orange;
   }
 
   &.white {
-    color: $main-white;
+    color: colors.$main-white;
+  }
+
+  &.dark-theme {
+    color: colors.$main-white;
   }
 }
-
-

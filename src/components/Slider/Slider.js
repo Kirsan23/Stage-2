@@ -16,15 +16,18 @@ export const Slider = (props) => {
 
   return (
     <div className='wrapper'>
-      <div className='slider' style={{height: `${height}`}}>
+      <div className='slider' style={{ height: `${height}` }}>
         {children.map((children, id) => (
-          <div key={id} className={`slide ${
-            count === id
-              ? 'visible'
-              : count > id
-              ? 'invisible-post'
-              : 'invisible-pre'
-          }`}>{children}</div>
+          <div
+            key={id}
+            className={`slide ${
+              (count === id && 'visible') ||
+              (count > id && 'invisible-post') ||
+              'invisible-pre'
+            }`}
+          >
+            {children}
+          </div>
         ))}
       </div>
       <div className='btns'>
@@ -34,5 +37,4 @@ export const Slider = (props) => {
       </div>
     </div>
   );
-}
-
+};

@@ -9,8 +9,6 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <h5 className='theme-switch' onClick={handleClick}>
-      *
-    </h5>
+    <span className='icon-Dark' onClick={handleClick}/>
   );
 }
