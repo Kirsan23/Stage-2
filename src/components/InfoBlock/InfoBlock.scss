@@ -1,15 +1,8 @@
 // as *
 @use '../../assets/styles/variables.scss' as colors;
 
-.info-block {
+.infoBlock {
     width: 570px;
-    // margin: 0 auto;
-
-    & h6, p {
-        font-size: 16px;
-        font-weight: 400;
-        color: colors.$main-gray;
-    }
 
     &-title {
         margin-bottom: 25px;
@@ -21,5 +14,11 @@
 
     &-paragraph {
         margin-bottom: 50px;
+    }
+
+    &-title, &-paragraph {
+        font-size: 16px;
+        font-weight: 400;
+        color: colors.$main-gray;
     }
 }

@@ -4,7 +4,6 @@ import { DarkModeContext } from '../../components/Context';
 import { Typography } from '../../components/Typography';
 import { Slider } from '../../components/Slider/';
 import './ClientsFeedback.scss';
-import { ForTest } from '../../components/ForTest';
 
 export const ClientsFeedback = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -53,7 +52,7 @@ export const ClientsFeedback = () => {
 
   return (
     <section
-      className={`clients-feedback ${darkMode ? `dark-theme` : `light-theme`}`}
+      className={`clients-feedback ${darkMode ? `dark-theme` : `light-theme`}`} id='clients'
     >
       <div className='main-block'>
         <InfoBlock

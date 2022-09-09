@@ -36,7 +36,7 @@ export const ContactUs = () => {
 
   return (
     <section
-      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`}
+      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`} id='contactUs'
     >
       <div className='contactUs-wrapper'>
         <InfoBlock

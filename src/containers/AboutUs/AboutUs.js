@@ -33,7 +33,7 @@ export const AboutUs = () => {
     },
   ];
   return (
-    <section className={`about-us ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section className={`about-us ${darkMode ? `dark-theme` : `light-theme`}`} id='aboutUs'>
       <div className='about-us-block'>
         <div className='about-us-top-block'>
           <img

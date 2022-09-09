@@ -2,16 +2,12 @@
 @use '../../assets/styles/variables.scss' as colors;
 
 .social_block {
+  display: flex;
   &.vertical {
     position: fixed;
     right: 0;
     width: 40px;
-    display: flex;
     flex-wrap: wrap;
-  }
-
-  &.horizontal {
-    display: flex;
   }
 }
 

@@ -1,6 +1,6 @@
 @use '../../assets/styles/variables.scss' as colors;
 
-.hero-section {
+.heroSection {
   margin-top: 100px;
   height: 735px;
   display: flex;
@@ -10,8 +10,9 @@
 
   background: colors.$main-orange-bcg;
 
-  &-main-block {
-    width: 570px;
+  &-info {
+    margin-right: 35px;
+    width: 490px;
   }
 
   &.dark-theme {

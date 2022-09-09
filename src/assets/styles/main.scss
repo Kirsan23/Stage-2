@@ -1,6 +1,13 @@
 @use './variables.scss' as colors;
 @import './icons.scss';
 
+// HTML
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 // Body
 
 body {

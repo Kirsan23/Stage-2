@@ -7,7 +7,7 @@ import './OurWork.scss';
 export const OurWork = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
-    <section className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`} id='ourWork'>
       <div className='our-work-block'>
         <InfoBlock
           title='Our Work'

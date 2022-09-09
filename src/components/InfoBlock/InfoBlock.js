@@ -8,22 +8,23 @@ export const InfoBlock = (props) => {
     heading,
     highlight,
     component = 'h2',
+    className,
     variant,
     button,
     children,
   } = props;
 
   return (
-    <div className='info-block'>
-      {title && <h6 className='info-block-title'>{title}</h6>}
+    <div className={`${className ? className : 'infoBlock'}`}>
+      {title && <h6 className='infoBlock-title'>{title}</h6>}
       <Highlighter
-        className='info-block-highlighter'
+        className='infoBlock-highlighter'
         heading={heading}
         highlight={highlight}
         component={component}
         variant={variant}
       />
-      {children && <p className='info-block-paragraph'>{children}</p>}
+      {children && <p className='infoBlock-paragraph'>{children}</p>}
       {button !== 'none' && <Button />}
     </div>
   );

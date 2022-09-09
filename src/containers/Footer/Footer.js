@@ -3,6 +3,7 @@ import { DarkModeContext } from '../../components/Context';
 import { Typography } from '../../components/Typography';
 import { Highlighter } from '../../components/Highlighter';
 import { SocialBlock } from '../../components/SocialBlock';
+import { Navigation } from '../../components/Navigation';
 import './Footer.scss';
 
 export const Footer = () => {
@@ -36,7 +37,8 @@ export const Footer = () => {
             >
               Company
             </Typography>
-            <Typography className='top-list' color='white'>
+            <Navigation className='top-list' direction='vertical' variant='h6' color='white'/>
+            {/* <Typography className='top-list' color='white'>
               <ul>
                 <li>About Us</li>
                 <li>Our Work</li>
@@ -44,7 +46,7 @@ export const Footer = () => {
                 <li>Our Blog</li>
                 <li>Contact US</li>
               </ul>
-            </Typography>
+            </Typography> */}
           </div>
           <div className='top-services'>
             <Typography
@@ -55,7 +57,7 @@ export const Footer = () => {
             >
               Sevices
             </Typography>
-            <Typography className='top-list' color='white'>
+            <Typography className='top-list' color='white' component='div'>
               <ul>
                 <li>Graphic Design</li>
                 <li>UI/UX Design</li>

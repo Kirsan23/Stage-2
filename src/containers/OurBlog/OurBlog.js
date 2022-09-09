@@ -56,7 +56,7 @@ export const OurBlog = () => {
   ];
 
   return (
-    <section className={`our-blog ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section className={`our-blog ${darkMode ? `dark-theme` : `light-theme`}`} id='ourBlog'>
       <div className='our-blog main-block'>
         <InfoBlock
           title='Our Blog'
