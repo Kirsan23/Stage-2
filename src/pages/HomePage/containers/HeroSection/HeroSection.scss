@@ -1,0 +1,21 @@
+@use '../../../../assets/styles/variables.scss' as colors;
+
+.heroSection {
+  margin-top: 100px;
+  height: 735px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background: colors.$main-orange-bcg;
+
+  &-info {
+    margin-right: 35px;
+    width: 490px;
+  }
+
+  &.dark-theme {
+    background-color: colors.$main-dark-view-1;
+  }
+}

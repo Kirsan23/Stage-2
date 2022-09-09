@@ -1,0 +1,29 @@
+@use '../../../../assets/styles/variables.scss' as colors;
+
+.map {
+  &-wrapper {
+    max-width: 1170px;
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 60px 0 120px 0;
+  }
+
+  &.dark-theme {
+    background-color: colors.$main-dark-bcg;
+  }
+}
+
+.map-img {
+  margin-bottom: 120px;
+  height: 450px;
+}
+
+.additional_block {
+  display: flex;
+
+  &-img {
+    margin-right: 120px;
+  }
+}

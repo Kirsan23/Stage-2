@@ -1,0 +1,47 @@
+@use '../../../../assets/styles/variables.scss' as colors;
+
+.clients-feedback {
+  height: 640px;
+  display: flex;
+  background: colors.$main-orange-bcg;
+
+  &.dark-theme {
+    background-color: colors.$main-dark-view-1;
+  }
+}
+
+.main-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1300px;
+  margin: 60px auto;
+}
+
+.review-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 470px;
+  height: 250px;
+  padding: 35px 65px;
+  text-align: left;
+  background-color: colors.$main-orange;
+
+  &-photo {
+    position: absolute;
+    transform: translate(-105px, -55px);
+    z-index: 1;
+  }
+
+  &-name {
+    margin-bottom: 10px;
+  }
+
+  &-position {
+    margin-bottom: 20px;
+  }
+}
