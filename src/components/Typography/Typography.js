@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../components/Context';
 import './Typography.scss';
 
 export const Typography = (props) => {
+  const { darkMode } = useContext(DarkModeContext);
   const {
     children,
     variant = 'body1',
@@ -13,7 +16,7 @@ export const Typography = (props) => {
   const Tag = component;
 
   return (
-    <Tag className={`typography ${variant} ${color} ${className}`}>
+    <Tag className={`typography ${variant} ${darkMode ? 'white' : color} ${className}`}>
       {children}
     </Tag>
   );
