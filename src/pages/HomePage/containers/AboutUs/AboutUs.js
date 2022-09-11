@@ -47,7 +47,7 @@ export const AboutUs = () => {
               heading='We Are Making Ideas Better For Everyone'
               highlight='Making Ideas Better'
             >
-              <Typography color='gray' component='p'>
+              <Typography color='gray'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Nascetur imperdiet at a augue ullamcorper. Leo faucibus feugiat
                 rutrum aenean. Nisi, lectus aliquet aliquam consectetur augue
@@ -55,7 +55,7 @@ export const AboutUs = () => {
                 <br /> {/* No <br> please! */}
                 <br /> {/* No <br> please! */}
               </Typography>
-              <Typography color='gray' component='p'>
+              <Typography color='gray'>
                 Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit
                 faucibus est, dui interdum ut amet. Adipiscing feugiat vel at
                 posuere in. Pellentesque volutpat vestibulum.
