@@ -7,6 +7,9 @@ import './TeamMember.scss';
 
 export const TeamMember = () => {
   const { darkMode } = useContext(DarkModeContext);
+
+  // TODO: use https://fakerapi.it/en for this section
+
   const users = [
     {
       id: 1,
@@ -78,4 +81,4 @@ export const TeamMember = () => {
       </div>
     </section>
   );
-}
+};

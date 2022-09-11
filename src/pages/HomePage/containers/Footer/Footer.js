@@ -37,7 +37,12 @@ export const Footer = () => {
             >
               Company
             </Typography>
-            <Navigation className='top-list' direction='vertical' variant='h6' color='white'/>
+            <Navigation
+              className='top-list'
+              direction='vertical'
+              variant='h6'
+              color='white'
+            />
             {/* <Typography className='top-list' color='white'>
               <ul>
                 <li>About Us</li>
@@ -58,6 +63,7 @@ export const Footer = () => {
               Sevices
             </Typography>
             <Typography className='top-list' color='white' component='div'>
+              {/*Use array to print lists*/}
               <ul>
                 <li>Graphic Design</li>
                 <li>UI/UX Design</li>

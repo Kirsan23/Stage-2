@@ -7,6 +7,7 @@ import './ContactUs.scss';
 
 export const ContactUs = () => {
   const { darkMode } = useContext(DarkModeContext);
+  // TODO: useRef here for contacts
   const contacts = [
     {
       id: 1,
@@ -36,7 +37,8 @@ export const ContactUs = () => {
 
   return (
     <section
-      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`} id='contactUs'
+      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`}
+      id='contactUs'
     >
       <div className='contactUs-wrapper'>
         <InfoBlock
@@ -137,12 +139,13 @@ export const ContactUs = () => {
                 placeholder='Subject'
                 className='data_field subject'
               />
+              {/* TODO: use Textarea tag here */}
               <input
                 type='text'
                 placeholder='Send Massage'
                 className='data_field massage'
               />
-              <input type='submit' value='Send Massage' className='btn'/>
+              <input type='submit' value='Send Massage' className='btn' />
             </form>
           </div>
         </div>

@@ -7,9 +7,10 @@ export const Navigation = (props) => {
     className = '',
     direction = 'horizontal',
     color = 'black',
-    component,
+    component, // TODO: remove unused props
     variant,
   } = props;
+  // TODO: use useRef for nav items
   const navItems = [
     { id: 1, item: 'Home', hook: '#heroSection' },
     { id: 2, item: 'About Us', hook: '#aboutUs' },
@@ -20,6 +21,7 @@ export const Navigation = (props) => {
   ];
 
   return (
+    // TODO: Use nav tag
     <div className={`navigation ${direction} ${className}`}>
       {navItems.map(({ id, item, hook }) => (
         <a key={id} href={hook} className={`navigation_item ${direction}`}>

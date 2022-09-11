@@ -1,12 +1,13 @@
 import React, { createContext, useState } from 'react';
 
-// createContext needs for initial values - 1 parameter
+// TODO: createContext needs for initial values - 1 parameter
 const DarkModeContext = createContext();
 
-// What if there will be several themes?
+// TODO: What if there will be several themes?
 function ThemeProvider(props) {
   // Boolean can handle 2 themes. How to handle more than 2 themes?
   // What you think if to use 'light' & 'dark' strings instead of boolean?
+  // TODO: Save theme to localStorage/sessionStorage and load it from there
   const [darkMode, setDarkMode] = useState(false);
   const { children } = props;
 

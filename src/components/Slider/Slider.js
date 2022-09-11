@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import './Slider.scss';
 
 export const Slider = (props) => {
   const [count, setCount] = useState(0);
-  const { children, height = '250px' } = props;
+  const { children, height = 250 } = props;
   const handleClick = (val) => {
     if (val === 'prev') {
       count > 0 ? setCount(count - 1) : setCount(children.length - 1);
@@ -13,6 +13,16 @@ export const Slider = (props) => {
       count < children.length - 1 ? setCount(count + 1) : setCount(0);
     }
   };
+
+  // TODO: use 3 functions
+  const onPrevClickHandler = useCallback(() => {
+    // Use setCount/useState and pass callback there to get prevState
+    // setCount((prevState) => { ... })
+  }, []);
+
+  const onNextClickHandler = useCallback(() => {}, []);
+
+  const onResetClickHandler = useCallback(() => {}, []);
 
   return (
     <div className='wrapper'>
@@ -30,6 +40,7 @@ export const Slider = (props) => {
           </div>
         ))}
       </div>
+      {/* Don't short classNames */}
       <div className='btns'>
         <button className='prev' onClick={() => handleClick('prev')}></button>
         <button className='main' onClick={() => handleClick('main')}></button>

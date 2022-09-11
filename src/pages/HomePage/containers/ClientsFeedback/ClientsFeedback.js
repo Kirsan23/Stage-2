@@ -7,6 +7,8 @@ import './ClientsFeedback.scss';
 
 export const ClientsFeedback = () => {
   const { darkMode } = useContext(DarkModeContext);
+  // TODO: use https://fakerapi.it/en for this section
+  // TODO: useRef for reviews
   const reviews = [
     {
       id: 1,
@@ -52,7 +54,8 @@ export const ClientsFeedback = () => {
 
   return (
     <section
-      className={`clients-feedback ${darkMode ? `dark-theme` : `light-theme`}`} id='clients'
+      className={`clients-feedback ${darkMode ? `dark-theme` : `light-theme`}`}
+      id='clients'
     >
       <div className='main-block'>
         <InfoBlock
@@ -62,37 +65,33 @@ export const ClientsFeedback = () => {
           button='none'
         />
         <Slider height='250px'>
-        {reviews.map(({ id, name, position, photo, review }) => (
-              <div key={id} className='review-card'>
-                <img
-                  className='review-card-photo'
-                  src={photo}
-                  alt='Oh...'
-                />
-                <Typography
-                  className='review-card-name'
-                  component='h4'
-                  variant='h4'
-                  color='white'
-                >
-                  {name}
-                </Typography>
-                <Typography
-                  className='review-card-position'
-                  component='h6'
-                  variant='h6'
-                  color='white'
-                >
-                  {position}
-                </Typography>
-                <Typography
-                  className='review-card-text'
-                  component='p'
-                  color='white'
-                >
-                  {review}
-                </Typography>
-              </div>
+          {reviews.map(({ id, name, position, photo, review }) => (
+            <div key={id} className='review-card'>
+              <img className='review-card-photo' src={photo} alt='Oh...' />
+              <Typography
+                className='review-card-name'
+                component='h4'
+                variant='h4'
+                color='white'
+              >
+                {name}
+              </Typography>
+              <Typography
+                className='review-card-position'
+                component='h6'
+                variant='h6'
+                color='white'
+              >
+                {position}
+              </Typography>
+              <Typography
+                className='review-card-text'
+                component='p'
+                color='white'
+              >
+                {review}
+              </Typography>
+            </div>
           ))}
         </Slider>
       </div>

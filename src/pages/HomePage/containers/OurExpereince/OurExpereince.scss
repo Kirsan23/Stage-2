@@ -6,6 +6,7 @@
   height: 675px;
   background: colors.$main-orange-bcg;
 
+  // TODO: create new container or class at assets for max-width: 1300px;
   &-block {
     max-width: 1300px;
     display: flex;

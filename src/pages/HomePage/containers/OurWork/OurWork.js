@@ -6,8 +6,14 @@ import './OurWork.scss';
 
 export const OurWork = () => {
   const { darkMode } = useContext(DarkModeContext);
+
+  // TODO: request images for tabs from - https://github.com/unsplash/unsplash-js
+
   return (
-    <section className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`} id='ourWork'>
+    <section
+      className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`}
+      id='ourWork'
+    >
       <div className='our-work-block'>
         <InfoBlock
           title='Our Work'
@@ -16,6 +22,8 @@ export const OurWork = () => {
           button='none'
         ></InfoBlock>
         <div className='our-work-navigation'>
+          {/* TODO: make tabs work */}
+          {/* All / Graphic Design / UI/UX Design / Web Development - each tab needs to show different images */}
           <Typography
             className='our-work-navigation-unit'
             component='h5'
@@ -90,4 +98,4 @@ export const OurWork = () => {
       </div>
     </section>
   );
-}
+};

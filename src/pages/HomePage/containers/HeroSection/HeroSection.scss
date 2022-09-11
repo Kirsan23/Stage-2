@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
 .heroSection {
   margin-top: 100px;
@@ -8,14 +8,14 @@
   justify-content: center;
   align-items: center;
 
-  background: colors.$main-orange-bcg;
+  background: $main-orange-bcg;
 
   &-info {
     margin-right: 35px;
     width: 490px;
   }
 
-  &.dark-theme {
-    background-color: colors.$main-dark-view-1;
+  .dark-theme & {
+    background-color: $main-dark-view-1;
   }
 }
