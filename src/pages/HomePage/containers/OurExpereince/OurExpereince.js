@@ -1,11 +1,8 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Typography } from '../../../../components/Typography';
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
 import './OurExpereince.scss';
 
 export const OurExpereince = () => {
-  const { darkMode } = useContext(DarkModeContext);
   const cards = [
     {
       id: 1,
@@ -30,40 +27,38 @@ export const OurExpereince = () => {
   ];
   return (
     <section
-      className={`our-expereince ${darkMode ? `dark-theme` : `light-theme`}`}
+      className={`ourExpereince`}
     >
-      <div className='our-expereince-block'>
-        <div className='our-expereince-main-block'>
+      <div className='sectionWrapper'>
           <InfoBlock
             title='Our Expereince'
             heading='We Have Completed 150+ Projects Successfully'
             highlight='150+ Projects'
           >
-            <Typography>
+            <Typography className='infoBlock-paragraph secondary' component='p'>
               Our Expereince We Have Completed 150+ Projects Succesfully Lorem
               ipsum dolor sit amet, consectetur adipiscing elit. Nascetur
               imperdiet at a augue ullamcorper. Leo faucibus feugiat rutrum
               aenean. Nisi, lectus aliquet aliquam consectetur augue praesent.
               Lorem vulputate orci eget mi, sed pulvinar.
             </Typography>
-            <Typography>
+            <Typography className='infoBlock-paragraph' component='p'>
               Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit
               faucibus est, dui interdum ut amet. Adipiscing feugiat vel at
               posuere in. Pellentesque volutpat vestibulum.
             </Typography>
           </InfoBlock>
-        </div>
-        <div className='our-expereince-right-block'>
+        <div className='rightContainer'>
           {cards.map(({ id, counter, text }) => (
-            <div key={id} className='our-expereince-right-block-card'>
+            <div key={id} className='rightContainer-card'>
               <Typography
-                className='our-expereince-right-block-card-counter'
-                variant='h1'
+                className='rightContainer-card-counter'
+                // variant='h1'
               >
                 {counter}
               </Typography>
               <Typography
-                className='our-expereince-right-block-card-text'
+                className='rightContainer-card-text'
                 variant='h5'
                 color='gray'
               >

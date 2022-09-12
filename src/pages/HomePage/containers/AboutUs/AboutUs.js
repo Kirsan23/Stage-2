@@ -1,11 +1,8 @@
 import { Typography } from '../../../../components/Typography';
-import { InfoBlock } from '../../../../components/InfoBlock/InfoBlock'; 
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
+import { InfoBlock } from '../../../../components/InfoBlock/InfoBlock';
 import './AboutUs.scss';
 
 export const AboutUs = () => {
-  const { darkMode } = useContext(DarkModeContext);
   const cards = [
     {
       id: 1,
@@ -33,29 +30,27 @@ export const AboutUs = () => {
     },
   ];
   return (
-    <section className={`about-us ${darkMode ? `dark-theme` : `light-theme`}`} id='aboutUs'>
-      <div className='about-us-block'>
-        <div className='about-us-top-block'>
+    <section className='aboutUs' id='aboutUs'>
+      <div className='sectionWrapper'>
+        <div className='topContainer'>
           <img
-            className='about-us-img'
+            className='aboutUs-img'
             src={require(`../../../../img/about-us-img.png`)}
             alt='Oh...'
           />
-          <div className='about-us-main-block'>
+          <div className='aboutUs-info'> {/* Block displacement wrapper (aesthetics) */}
             <InfoBlock
               title='About Us'
               heading='We Are Making Ideas Better For Everyone'
               highlight='Making Ideas Better'
             >
-              <Typography color='gray'>
+              <Typography className='infoBlock-paragraph secondary' component='p'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Nascetur imperdiet at a augue ullamcorper. Leo faucibus feugiat
                 rutrum aenean. Nisi, lectus aliquet aliquam consectetur augue
                 praesent. Lorem vulputate orci eget mi, sed pulvinar.
-                <br /> {/* No <br> please! */}
-                <br /> {/* No <br> please! */}
               </Typography>
-              <Typography color='gray'>
+              <Typography className='infoBlock-paragraph' component='p'>
                 Ornare etiam erat volutpat tempor fringilla mi. Elit a blandit
                 faucibus est, dui interdum ut amet. Adipiscing feugiat vel at
                 posuere in. Pellentesque volutpat vestibulum.
@@ -63,14 +58,14 @@ export const AboutUs = () => {
             </InfoBlock>
           </div>
         </div>
-        <div className='about-us-bottom-block'>
+        <div className='bottomContainer'>
           {cards.map(({ id, text, icon, color }) => (
-            <div key={id} className='about-us-bottom-block-card'>
-              <div className={`about-us-bottom-block-card-button ${color}`}>
+            <div key={id} className='bottomContainer-card'>
+              <div className={`bottomContainer-card-icon ${color}`}>
                 <span className={`${icon}`} />
               </div>
-              <div className='about-us-bottom-block-card-text'>
-                <Typography>{text}</Typography>
+              <div className='bottomContainer-card-text'>
+                <Typography component='h6'>{text}</Typography>
               </div>
             </div>
           ))}

@@ -1,8 +1,9 @@
 // as *
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .social_block {
   display: flex;
+
   &.vertical {
     position: fixed;
     right: 0;
@@ -20,15 +21,30 @@
   height: 40px;
   padding: 10px;
   font-size: 25px;
-  transition: color 0.5s, background-color 0.5s;
-  background-color: colors.$main-white;
-  color: colors.$main-orange;
-  // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to colors.scss as well?
-  box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+  background-color: $main-white;
+  color: $main-orange;
+  // Are you using rgba(255, 83, 0, 0.4) somewhere else? Can we move it to scss as well?
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+
+  .vertical & {
+    .heroSection & {
+      .dark-theme & {
+        color: $main-white;
+        background-color: $main-dark-view-2;
+
+        &:hover {
+          background-color: $main-orange;
+          color: $main-white;
+        }
+      }
+    }
+  }
 
   &:hover {
-    background-color: colors.$main-orange;
-    color: colors.$main-white;
+    background-color: $main-orange;
+    color: $main-white;
+    box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
   }
 
   &.vertical {

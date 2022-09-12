@@ -1,4 +1,4 @@
-@use './variables.scss' as colors;
+@use './variables.scss' as *;
 @import './icons.scss';
 
 // HTML
@@ -14,14 +14,18 @@ body {
   font-family: 'Work Sans';
   width: 100%;
   margin: auto;
-
-  &.dark-theme {
-    background-color: colors.$main-dark-bcg;
-  }
 }
 
 *div {
   box-sizing: border-box;
+}
+
+.sectionWrapper {
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 

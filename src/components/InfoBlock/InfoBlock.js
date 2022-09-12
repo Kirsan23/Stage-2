@@ -24,7 +24,7 @@ export const InfoBlock = (props) => {
         component={component}
         variant={variant}
       />
-      {children && <p className='infoBlock-paragraph'>{children}</p>}
+      {children && children}
       {button !== 'none' && <Button />}
     </div>
   );

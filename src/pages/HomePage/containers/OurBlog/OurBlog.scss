@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
 .our-blog {
   display: flex;
@@ -13,8 +13,8 @@
     margin: 120px auto;
   }
 
-  &.dark-theme {
-    background-color: colors.$main-dark-bcg;
+  .dark-theme &{
+    background-color: $main-dark-bcg;
   }
 }
 

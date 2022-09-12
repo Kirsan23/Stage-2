@@ -1,65 +1,58 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
-.our-expereince {
+.ourExpereince {
   display: flex;
   justify-content: center;
   height: 675px;
-  background: colors.$main-orange-bcg;
+  background: $main-orange-bcg;
 
-  // TODO: create new container or class at assets for max-width: 1300px;
-  &-block {
-    max-width: 1300px;
+  .dark-theme & {
+    background-color: $main-dark-view-1;
+  }
+}
+
+.rightContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 570px;
+  margin-left: 30px;
+
+  &-card {
+    width: 270px;
+    height: 250px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
 
-  &-main-block {
-    width: 570px;
-  }
+    background: $main-white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
-  &-right-block {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &-card {
-      width: 270px;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      background: colors.$main-white;
-      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-
-      &:nth-child(odd) {
-        margin: 0 30px 30px 0;
-      }
-
-      &:nth-child(even) {
-        margin: 23px 0px 0 0;
-      }
-
-      &-counter {
-        margin-bottom: 15px;
-        font-weight: 700;
-        font-size: 48px;
-
-        color: colors.$main-black
-      }
-
-      &-text {
-        font-weight: 500;
-        font-size: 20px;
-
-        color: colors.$main-black
-      }
+    &:nth-child(odd) {
+      margin: 0 30px 30px 0;
     }
-  }
 
-  &.dark-theme {
-    background-color: colors.$main-dark-view-1;
+    &:nth-child(even) {
+      margin: 23px 0px 0 0;
+    }
+
+    &-counter {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 48px;
+      color: $main-black;
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 20px;
+
+      color: $main-black;
+    }
+
+    .dark-theme & {
+      background-color: $main-dark-view-2;
+    }
   }
 }

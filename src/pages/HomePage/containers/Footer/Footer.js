@@ -43,15 +43,6 @@ export const Footer = () => {
               variant='h6'
               color='white'
             />
-            {/* <Typography className='top-list' color='white'>
-              <ul>
-                <li>About Us</li>
-                <li>Our Work</li>
-                <li>Client</li>
-                <li>Our Blog</li>
-                <li>Contact US</li>
-              </ul>
-            </Typography> */}
           </div>
           <div className='top-services'>
             <Typography

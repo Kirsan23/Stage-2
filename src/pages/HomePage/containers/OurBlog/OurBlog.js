@@ -1,12 +1,9 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
 import { Slider } from '../../../../components/Slider';
 import './OurBlog.scss';
 import { Typography } from '../../../../components/Typography';
 
 export const OurBlog = () => {
-  const { darkMode } = useContext(DarkModeContext);
   const reviews = [
     {
       id: 1,
@@ -56,7 +53,7 @@ export const OurBlog = () => {
   ];
 
   return (
-    <section className={`our-blog ${darkMode ? `dark-theme` : `light-theme`}`} id='ourBlog'>
+    <section className='our-blog' id='ourBlog'>
       <div className='our-blog main-block'>
         <InfoBlock
           title='Our Blog'

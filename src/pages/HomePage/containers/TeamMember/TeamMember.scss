@@ -1,63 +1,67 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
-.team-member {
+.teamMember {
   padding: 120px 0;
+  text-align: center;
 
-  &-block {
-    display: flex;
+  .sectionWrapper {
     flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    max-width: 1300px;
-    margin: 0 auto;
   }
 
-  &-bottom-block {
-    display: flex;
+  .dark-theme & {
+    background-color: $main-dark-bcg;
+  }
 
-    &-card {
-      margin-right: 30px;
-      overflow: hidden;
-      background: colors.$main-white;
-      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  & .card {
+    margin-right: 30px;
+    overflow: hidden;
+    background: $main-white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
-      &:last-child {
-        margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-social {
+      transform: translateX(50px);
+      transition: transform 0.5s;
+      position: absolute;
+      right: 0;
+      top: 13%;
+    }
+
+    &-top {
+      position: relative;
+    }
+
+    &-footer {
+      height: 100px;
+      &-name {
+        margin-bottom: 10px;
+        padding-top: 25px;
       }
 
-      &:hover &-social {
-        transform: translateX(0);
+      &-prof {
+        margin-bottom: 15px;
       }
+    }
 
-      &-img {
-        margin-bottom: 25px;
-      }
+    .dark-theme & {
+      background-color: $main-dark-view-1;
+    }
 
-      &-social {
-        transform: translateX(50px);
-        transition: transform 0.5s;
-        position: absolute;
-        right: 0;
-        top: 13%;
-      }
-
-      &-top {
-        position: relative;
-      }
-
-      &-bottom {
-        &-name {
-          margin-bottom: 10px;
-        }
-
-        &-prof {
-          margin-bottom: 15px;
-        }
-      }
+    &:hover &-social {
+      transform: translateX(0);
     }
   }
 
-  &.dark-theme {
-    background-color: colors.$main-dark-bcg;
+  & .bottomContainer {
+    display: flex;
+  }
+}
+
+.card {
+  &:hover &-social {
+    transform: translateX(0);
   }
 }

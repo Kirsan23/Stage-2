@@ -1,13 +1,9 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
 import { SocialBlock } from '../../../../components/SocialBlock';
 import { Typography } from '../../../../components/Typography';
 import './TeamMember.scss';
 
 export const TeamMember = () => {
-  const { darkMode } = useContext(DarkModeContext);
-
   // TODO: use https://fakerapi.it/en for this section
 
   const users = [
@@ -37,37 +33,35 @@ export const TeamMember = () => {
     },
   ];
   return (
-    <section
-      className={`team-member ${darkMode ? `dark-theme` : `light-theme`}`}
-    >
-      <div className='team-member-block'>
+    <section className={'teamMember'}>
+      <div className='sectionWrapper'>
         <InfoBlock
           title='Team Member'
           heading='We Have Some Awesome People'
           highlight='Some Awesome'
           button='none'
         />
-        <div className='team-member-bottom-block'>
+        <div className='bottomContainer'>
           {users.map(({ id, name, position, photo }) => (
-            <div key={id} className='team-member-bottom-block-card'>
-              <div className='team-member-bottom-block-card-top'>
+            <div key={id} className='card'>
+              <div className='card-top'>
                 <img
-                  className='team-member-bottom-block-card-img'
+                  className='card-img'
                   src={photo}
                   alt='Oh...'
                 />
-                <SocialBlock className='team-member-bottom-block-card-social' />
+                <SocialBlock className='card-social' />
               </div>
-              <div className='team-member-bottom-block-card-bottom'>
+              <div className='card-footer'>
                 <Typography
-                  className='team-member-bottom-block-card-bottom-name'
+                  className='card-footer-name'
                   component='h5'
                   variant='h5'
                 >
                   {name}
                 </Typography>
                 <Typography
-                  className='team-member-bottom-block-card-bottom-prof'
+                  className='card-footer-prof'
                   component='h6'
                   variant='h6'
                   color='gray'

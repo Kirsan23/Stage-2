@@ -1,17 +1,13 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Typography } from '../../../../components/Typography';
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
 import './OurWork.scss';
 
 export const OurWork = () => {
-  const { darkMode } = useContext(DarkModeContext);
-
   // TODO: request images for tabs from - https://github.com/unsplash/unsplash-js
 
   return (
     <section
-      className={`our-work ${darkMode ? `dark-theme` : `light-theme`}`}
+      className='our-work'
       id='ourWork'
     >
       <div className='our-work-block'>

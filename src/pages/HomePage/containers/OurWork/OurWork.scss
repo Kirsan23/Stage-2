@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
 .our-work {
 
@@ -46,7 +46,7 @@
     }
   }
 
-  &.dark-theme {
-    background-color: colors.$main-dark-view-1;
+  .dark-theme &{
+    background-color: $main-dark-bcg;
   }
 }

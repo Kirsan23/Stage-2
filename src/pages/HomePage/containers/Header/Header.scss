@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
 .header {
     width: 100%;
@@ -9,7 +9,7 @@
     justify-content: space-around;
     place-items: center;
     z-index: 1;
-    background-color: colors.$main-white;
+    background-color: $main-white;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
     &-logo {
@@ -29,8 +29,8 @@
         }
     }
     
-    &.dark-theme {
-        background-color: colors.$main-dark-view-2;
-        color: colors.$main-white;
+    .dark-theme &{
+        background-color: $main-dark-view-2;
+        color: $main-white;
     }
 }

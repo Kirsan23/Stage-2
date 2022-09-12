@@ -6,17 +6,11 @@ import './Typography.scss';
 
 export const Typography = (props) => {
   const { darkMode } = useContext(DarkModeContext);
-  const {
-    children,
-    variant = 'body1',
-    component = `span`,
-    color = 'black',
-    className = '',
-  } = props;
+  const { children, variant, component = `span`, color, className } = props;
   const Tag = component;
 
   return (
-    <Tag className={`typography ${variant} ${darkMode ? 'white' : color} ${className}`}>
+    <Tag className={`typography ${variant || ''} ${(color !== 'gray' && darkMode) ? 'white' : (color || '')} ${className || ''}`}>
       {children}
     </Tag>
   );
@@ -30,6 +24,7 @@ Typography.propTypes = {
     'h4',
     'h5',
     'h6',
+    'p',
     'body1',
     'body2',
     'subtitle1',

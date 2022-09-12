@@ -19,7 +19,7 @@ export const Highlighter = (props) => {
   const Tag = component;
 
   return (
-    <Tag className={`${className} ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <Tag className={`${className}`}>
       {parts.map((part, i) => (
         <span
           key={i}

@@ -1,11 +1,14 @@
-// as *
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .infoBlock {
     width: 570px;
 
     &-title {
         margin-bottom: 25px;
+
+        .dark-theme & {
+            color: $main-white;
+          }
     }
 
     &-highlighter {
@@ -14,11 +17,15 @@
 
     &-paragraph {
         margin-bottom: 50px;
+
+        &.secondary {
+            margin-bottom: 20px;
+        }
     }
 
     &-title, &-paragraph {
         font-size: 16px;
         font-weight: 400;
-        color: colors.$main-gray;
+        color: $main-gray;
     }
 }
