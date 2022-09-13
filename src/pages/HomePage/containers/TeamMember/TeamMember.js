@@ -45,11 +45,7 @@ export const TeamMember = () => {
           {users.map(({ id, name, position, photo }) => (
             <div key={id} className='card'>
               <div className='card-top'>
-                <img
-                  className='card-img'
-                  src={photo}
-                  alt='Oh...'
-                />
+                <img className='card-img' src={photo} alt='Oh...' />
                 <SocialBlock className='card-social' />
               </div>
               <div className='card-footer'>

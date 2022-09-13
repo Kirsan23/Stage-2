@@ -7,10 +7,10 @@ export const OurWork = () => {
 
   return (
     <section
-      className='our-work'
+      className='ourWork'
       id='ourWork'
     >
-      <div className='our-work-block'>
+      <div className='sectionWrapper'>
         <InfoBlock
           title='Our Work'
           heading={'We Have Some Designed & Development Projects'}
