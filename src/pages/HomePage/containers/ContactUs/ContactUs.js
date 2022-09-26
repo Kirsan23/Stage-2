@@ -1,5 +1,5 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { DarkModeContext } from '../../../../components/Context';
 import { Typography } from '../../../../components/Typography';
 import { Highlighter } from '../../../../components//Highlighter';
@@ -7,8 +7,8 @@ import './ContactUs.scss';
 
 export const ContactUs = () => {
   const { darkMode } = useContext(DarkModeContext);
-  // TODO: useRef here for contacts
-  const contacts = [
+  // TODO: useRef here for contacts-DONE!
+  const contactsRef = useRef([
     {
       id: 1,
       icon: 'icon-mail',
@@ -33,7 +33,7 @@ export const ContactUs = () => {
       contactsType: 'Visit Us',
       item1: '158 ralegih sit, houston, yk 5896,uk',
     },
-  ];
+  ]);
 
   return (
     <section
@@ -48,7 +48,7 @@ export const ContactUs = () => {
           button='none'
         />
         <div className='contacts-cards'>
-          {contacts.map(
+          {contactsRef.current.map(
             ({ id, icon, title, contactsType, item1, item2, add }) => (
               <div key={id} className='contacts-card'>
                 <div className='card-top'>

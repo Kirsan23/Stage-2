@@ -4,25 +4,34 @@ import './Slider.scss';
 export const Slider = (props) => {
   const [count, setCount] = useState(0);
   const { children, height = 250 } = props;
-  const handleClick = (val) => {
-    if (val === 'prev') {
-      count > 0 ? setCount(count - 1) : setCount(children.length - 1);
-    } else if (val === 'main') {
-      setCount(0);
-    } else if (val === 'next') {
-      count < children.length - 1 ? setCount(count + 1) : setCount(0);
-    }
-  };
+  // const handleClick = (val) => {
+  //   if (val === 'prev') {
+  //     count > 0 ? setCount(count - 1) : setCount(children.length - 1);
+  //   } else if (val === 'reset') {
+  //     setCount(0);
+  //   } else if (val === 'next') {
+  //     count < children.length - 1 ? setCount(count + 1) : setCount(0);
+  //   }
+  // };
 
-  // TODO: use 3 functions
-  const onPrevClickHandler = useCallback(() => {
-    // Use setCount/useState and pass callback there to get prevState
-    // setCount((prevState) => { ... })
+  // TODO: use 3 functions-DONE?
+  // const onPrevClickHandler = useCallback(() =>
+  //    Use setCount/useState and pass callback there to get prevState
+  //    setCount((prevState) => { ... })
+  //   {}, []);
+
+  const onPrevClickHandler = useCallback(() =>
+    {
+      setCount((prevState) => prevState > 0 ? prevState - 1 : children.length - 1);
+    }, []);
+
+  const onNextClickHandler = useCallback(() => {
+    setCount((prevState) => prevState < children.length - 1 ? prevState + 1 : 0);
   }, []);
 
-  const onNextClickHandler = useCallback(() => {}, []);
-
-  const onResetClickHandler = useCallback(() => {}, []);
+  const onResetClickHandler = useCallback(() => {
+    setCount(0);
+  }, []);
 
   return (
     <div className='wrapper'>
@@ -40,11 +49,11 @@ export const Slider = (props) => {
           </div>
         ))}
       </div>
-      {/* Don't short classNames */}
-      <div className='btns'>
-        <button className='prev' onClick={() => handleClick('prev')}></button>
-        <button className='main' onClick={() => handleClick('main')}></button>
-        <button className='next' onClick={() => handleClick('next')}></button>
+      {/* Don't short classNames - DONE!*/}
+      <div className='buttonPanel'>
+        <button className='prevSlide' onClick={() => onPrevClickHandler()}></button>
+        <button className='resetSlide' onClick={() => onResetClickHandler()}></button>
+        <button className='nextSlide' onClick={() => onNextClickHandler()}></button>
       </div>
     </div>
   );

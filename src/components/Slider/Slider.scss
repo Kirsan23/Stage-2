@@ -45,15 +45,15 @@
   }
 }
 
-.btns {
+.buttonPanel {
   width: 500px;
   display: flex;
   justify-content: center;
 }
 
-.prev,
-.main,
-.next {
+.prevSlide,
+.resetSlide,
+.nextSlide {
   justify-content: center;
   display: flex;
   width: 15px;
@@ -67,16 +67,16 @@
   }
 }
 
-.prev {
+.prevSlide {
   margin-right: 5px;
   background-color: colors.$main-orange;
 }
 
-.main {
+.resetSlide {
   margin-right: 5px;
   background-color: colors.$main-black;
 }
 
-.next {
+.nextSlide {
   background-color: colors.$main-gray;
 }

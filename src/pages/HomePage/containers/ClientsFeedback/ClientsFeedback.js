@@ -1,15 +1,13 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
+import { useRef } from 'react';
 import { Typography } from '../../../../components/Typography';
 import { Slider } from '../../../../components/Slider/';
 import './ClientsFeedback.scss';
 
 export const ClientsFeedback = () => {
-  const { darkMode } = useContext(DarkModeContext);
   // TODO: use https://fakerapi.it/en for this section
-  // TODO: useRef for reviews
-  const reviews = [
+  // TODO: useRef for reviews-DONE!
+  const reviewsRef = useRef([
     {
       id: 1,
       name: 'Justin Septimus',
@@ -50,11 +48,11 @@ export const ClientsFeedback = () => {
       review:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit a laoreet libero dis eget maecenas bibendum. Morbi lacinia eu, etiam volutpat morbi et amet, sagittis adipiscing.',
     },
-  ];
+  ]);
 
   return (
     <section
-      className={`clients-feedback ${darkMode ? `dark-theme` : `light-theme`}`}
+      className='clients-feedback'
       id='clients'
     >
       <div className='main-block'>
@@ -65,7 +63,7 @@ export const ClientsFeedback = () => {
           button='none'
         />
         <Slider height='250px'>
-          {reviews.map(({ id, name, position, photo, review }) => (
+          {reviewsRef.current.map(({ id, name, position, photo, review }) => (
             <div key={id} className='review-card'>
               <img className='review-card-photo' src={photo} alt='Oh...' />
               <Typography

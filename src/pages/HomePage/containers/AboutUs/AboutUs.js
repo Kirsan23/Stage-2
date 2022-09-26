@@ -1,9 +1,10 @@
+import { useRef } from 'react';
 import { Typography } from '../../../../components/Typography';
 import { InfoBlock } from '../../../../components/InfoBlock/InfoBlock';
 import './AboutUs.scss';
 
 export const AboutUs = () => {
-  const cards = [
+  const cardsRef = useRef([
     {
       id: 1,
       text: 'World leader in consulting and finance',
@@ -28,7 +29,7 @@ export const AboutUs = () => {
       icon: 'icon-share-box-line',
       color: 'black',
     },
-  ];
+  ]);
   return (
     <section className='aboutUs' id='aboutUs'>
       <div className='sectionWrapper'>
@@ -59,7 +60,7 @@ export const AboutUs = () => {
           </div>
         </div>
         <div className='bottomContainer'>
-          {cards.map(({ id, text, icon, color }) => (
+          {cardsRef.current.map(({ id, text, icon, color }) => (
             <div key={id} className='bottomContainer-card'>
               <div className={`bottomContainer-card-icon ${color}`}>
                 <span className={`${icon}`} />

@@ -1,12 +1,15 @@
-@use '../../../../assets/styles/variables.scss' as colors;
+@use '../../../../assets/styles/variables.scss' as *;
 
 .clients-feedback {
   height: 640px;
   display: flex;
-  background: colors.$main-orange-bcg;
+  background: $main-orange-bcg;
 
-  &.dark-theme {
-    background-color: colors.$main-dark-view-1;
+  // &.dark-theme {
+  //   background-color: $main-dark-view-1;
+  // }
+  .dark-theme & {
+    background-color: $main-dark-view-1;
   }
 }
 
@@ -29,7 +32,7 @@
   height: 250px;
   padding: 35px 65px;
   text-align: left;
-  background-color: colors.$main-orange;
+  background-color: $main-orange;
 
   &-photo {
     position: absolute;

@@ -1,10 +1,11 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Slider } from '../../../../components/Slider';
-import './OurBlog.scss';
 import { Typography } from '../../../../components/Typography';
+import { useRef } from 'react';
+import './OurBlog.scss';
 
 export const OurBlog = () => {
-  const reviews = [
+  const reviewsRef = useRef([
     {
       id: 1,
       name: 'Cristofer Westervelt',
@@ -50,7 +51,7 @@ export const OurBlog = () => {
       text: '35 Stellar Graphic Design Blogs to Keep You Educated and Inspired',
       date: `January 25, 2021 5 min Read`,
     },
-  ];
+  ]);
 
   return (
     <section className='our-blog' id='ourBlog'>
@@ -62,7 +63,7 @@ export const OurBlog = () => {
           button='none'
         ></InfoBlock>
         <Slider height='295px'>
-          {reviews.map(({ id, name, position, photo, picture, text, date }) => (
+          {reviewsRef.current.map(({ id, name, position, photo, picture, text, date }) => (
             <div key={id} className='blog-card'>
               <div className='blog-card-left'>
                 <Typography className='blog-card-position' component='h6' variant='h6' color='orange'>

@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
+import { useRef } from 'react';
 import { Typography } from '../../../../components/Typography';
 import { Highlighter } from '../../../../components/Highlighter';
 import { SocialBlock } from '../../../../components/SocialBlock';
@@ -7,10 +6,17 @@ import { Navigation } from '../../../../components/Navigation';
 import './Footer.scss';
 
 export const Footer = () => {
-  const { darkMode } = useContext(DarkModeContext);
+
+  const servicesRef = useRef([
+    {item: 'Graphic Design'},
+    {item: 'UI/UX Design'},
+    {item: 'Web Development'},
+    {item: 'App Development'},
+    {item: 'Web Hosting'},
+  ])
 
   return (
-    <section className={`footer ${darkMode ? `dark-theme` : `light-theme`}`}>
+    <section className={`footer`}>
       <div className='top'>
         <div className='top-wrapper'>
           <div className='top-digiency'>
@@ -54,13 +60,11 @@ export const Footer = () => {
               Sevices
             </Typography>
             <Typography className='top-list' color='white' component='div'>
-              {/*Use array to print lists*/}
+              {/*Use array to print lists - DONE!*/}
               <ul>
-                <li>Graphic Design</li>
-                <li>UI/UX Design</li>
-                <li>Web Development</li>
-                <li>App Development</li>
-                <li>Web Hosting</li>
+                {servicesRef.current.map(({item}) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </Typography>
           </div>
@@ -101,7 +105,7 @@ export const Footer = () => {
             </Typography>
           </div>
           <div className='bottom-text'>
-            <span className='icon-arrow-up-fill' />
+            <a href='#heroSection'><span className='icon-arrow-up-fill'/></a>
           </div>
         </div>
       </div>

@@ -1,34 +1,43 @@
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .navigation {
-    display: flex;
+  display: flex;
 
-    &.vertical {
-        flex-wrap: wrap;
-        width: 115px;
-    }
+  &.vertical {
+    flex-wrap: wrap;
+    width: 115px;
+  }
 
-    a {
-        color: black;
-        text-decoration: none;
+  & a {
+    color: $main-black;
+    text-decoration: none;
+
+    & span {
+      transition: color 0.3s;
+
+      &:hover {
+        color: $main-orange;
+      }
     }
+  }
 }
 
 .navigation_item {
+  cursor: pointer;
 
-    &.vertical {
-        margin-bottom: 10px;
-    
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    
-      &.horizontal {
-        margin-right: 40px;
-    
-        &:last-child {
-          margin-right: 0;
-        }
-      }
+  &.vertical {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.horizontal {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
