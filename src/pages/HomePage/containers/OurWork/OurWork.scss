@@ -63,11 +63,29 @@
         }
 
         &-img {
+          position: relative;
           background-repeat: no-repeat;
           width: 370px;
           height: 370px;
           background-size: cover;
           margin-right: 30px;
+
+          &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            background-color: rgba(0,0,0,0.8);
+            pointer-events: none;
+            transition: opacity 0.3s;
+          }
+
+          &:hover:before {
+            opacity: 1;
+          }
         }
       }
     }

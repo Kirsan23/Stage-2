@@ -5,6 +5,18 @@ import { createApi } from 'unsplash-js';
 import { useState, useEffect } from 'react';
 import './OurWork.scss';
 
+const unsplash = createApi({
+  accessKey: 'sImBf3MUWlUOZIdy6bZYHV2ajvR2fFEosADCN2gVED4',
+  // apiUrl: 'http://localhost:3000/unsplash-proxy',
+});
+
+const processResponseData = (image) => {
+  return {
+    id: image.id,
+    url: image.urls.regular,
+  };
+};
+
 export const OurWork = () => {
   // TODO: request images for tabs from - https://github.com/unsplash/unsplash-js
   // ? DONE?
@@ -15,57 +27,28 @@ export const OurWork = () => {
     secondTab: [],
     thirdTab: [],
   });
-  const getRandomImageFromUnsplash = createApi({
-    accessKey: `${process.env.REACT_APP_NOTHING_INTERESTING}`,
-  });
 
   useEffect(() => {
-    const fetchImagesUrls = async () => {
-      const responseForFirstTab =
-        await getRandomImageFromUnsplash.photos.getRandom({
-          collectionIds: [528639],
-          count: 6,
-        });
-      const dataForFirstTab = await responseForFirstTab.response.map(
-        (image) => ({
-          id: image.id,
-          url: image.urls.full,
-        })
+    const fetchImagesUrls = async (collectionIds = []) => {
+      if (!collectionIds.length) return;
+
+      const [firstTab, secondTab, thirdTab] = await Promise.all(
+        collectionIds.map((id) =>
+          unsplash.photos.getRandom({
+            collectionIds: [id],
+            count: 6,
+          })
+        )
       );
 
-      const responseForSecondTab =
-        await getRandomImageFromUnsplash.photos.getRandom({
-          collectionIds: ['h4BD0NfPm6s'],
-          count: 6,
-        });
-      const dataForSecondTab = await responseForSecondTab.response.map(
-        (image) => ({
-          id: image.id,
-          url: image.urls.full,
-        })
-      );
-
-      const responseForThirdTab =
-        await getRandomImageFromUnsplash.photos.getRandom({
-          collectionIds: [8504570],
-          count: 6,
-        });
-      const dataForThirdTab = await responseForThirdTab.response.map(
-        (image) => ({
-          id: image.id,
-          url: image.urls.full,
-        })
-      );
-
-      setImages((prevState) => ({
-        ...prevState,
-        firstTab: dataForFirstTab,
-        secondTab: dataForSecondTab,
-        thirdTab: dataForThirdTab,
-      }));
+      setImages({
+        firstTab: firstTab.response.map(processResponseData),
+        secondTab: secondTab.response.map(processResponseData),
+        thirdTab: thirdTab.response.map(processResponseData),
+      });
     };
 
-    fetchImagesUrls();
+    fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570]);
     // ! https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency (fix 'useEffect has missing dependencies')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
