@@ -4,9 +4,6 @@
   margin-top: 100px;
   height: 735px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   background: $main-orange-bcg;
 
   &-info {
@@ -16,5 +13,24 @@
 
   .dark-theme & {
     background-color: $main-dark-view-1;
+  }
+}
+
+@media screen and (max-device-width: 400px) {
+  .heroSection {
+    margin-top: 50px;
+
+    & .sectionWrapper {
+      flex-wrap: wrap-reverse;
+    }
+
+    &-info {
+      margin-right: 0;
+      width: 280px;
+    }
+
+    &-img {
+      width: 95%;
+    }
   }
 }

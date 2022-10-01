@@ -3,6 +3,7 @@ import { Typography } from '../../../../components/Typography';
 import { Highlighter } from '../../../../components/Highlighter';
 import { SocialBlock } from '../../../../components/SocialBlock';
 import { Navigation } from '../../../../components/Navigation';
+import { Button } from '../../../../components/Button';
 import './Footer.scss';
 
 export const Footer = () => {
@@ -13,7 +14,7 @@ export const Footer = () => {
     {item: 'Web Development'},
     {item: 'App Development'},
     {item: 'Web Hosting'},
-  ])
+  ]).current
 
   return (
     <section className={`footer`}>
@@ -57,12 +58,11 @@ export const Footer = () => {
               component='h2'
               color='white'
             >
-              Sevices
+              Services
             </Typography>
             <Typography className='top-list' color='white' component='div'>
-              {/*Use array to print lists - DONE!*/}
               <ul>
-                {servicesRef.current.map(({item}) => (
+                {servicesRef.map(({item}) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -88,9 +88,7 @@ export const Footer = () => {
                   placeholder='info@gmail.com'
                   className='top-newsletter-email'
                 />
-                <button type='submit' className='submit_btn btn'>
-                  <span className='icon-send-plane-fill' />
-                </button>
+                <Button className='submit_btn'><span className='icon-send-plane-fill' /></Button>
               </form>
             </div>
           </div>

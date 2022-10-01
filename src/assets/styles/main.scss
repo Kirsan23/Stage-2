@@ -56,6 +56,19 @@ body {
 }
 
 @media screen and (max-device-width: 400px){
+  body {
+    width: 100%;
+  }
+
+  .sectionWrapper {
+    max-width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
   *h1 {
     font-size: 31.25px;
   }

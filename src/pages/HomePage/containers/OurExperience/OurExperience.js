@@ -1,8 +1,8 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Typography } from '../../../../components/Typography';
-import './OurExpereince.scss';
+import './OurExperience.scss';
 
-export const OurExpereince = () => {
+export const OurExperience = () => {
   const cards = [
     {
       id: 1,
@@ -26,17 +26,16 @@ export const OurExpereince = () => {
     },
   ];
   return (
-    <section
-      className={`ourExpereince`}
-    >
+    <section className={`ourExperience`}>
       <div className='sectionWrapper'>
+        <div className='ourExperience-info'>
           <InfoBlock
-            title='Our Expereince'
+            title='Our Experience'
             heading='We Have Completed 150+ Projects Successfully'
             highlight='150+ Projects'
           >
             <Typography className='infoBlock-paragraph secondary' component='p'>
-              Our Expereince We Have Completed 150+ Projects Succesfully Lorem
+              Our Experience We Have Completed 150+ Projects Succesfully Lorem
               ipsum dolor sit amet, consectetur adipiscing elit. Nascetur
               imperdiet at a augue ullamcorper. Leo faucibus feugiat rutrum
               aenean. Nisi, lectus aliquet aliquam consectetur augue praesent.
@@ -48,17 +47,18 @@ export const OurExpereince = () => {
               posuere in. Pellentesque volutpat vestibulum.
             </Typography>
           </InfoBlock>
+        </div>
         <div className='rightContainer'>
           {cards.map(({ id, counter, text }) => (
-            <div key={id} className='rightContainer-card'>
+            <div key={id} className='card'>
               <Typography
-                className='rightContainer-card-counter'
+                className='card-counter'
                 // variant='h1'
               >
                 {counter}
               </Typography>
               <Typography
-                className='rightContainer-card-text'
+                className='card-text'
                 variant='h5'
                 color='gray'
               >
@@ -70,4 +70,4 @@ export const OurExpereince = () => {
       </div>
     </section>
   );
-}
+};

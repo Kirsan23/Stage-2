@@ -1,5 +1,4 @@
-// You can import "as *"
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .btn {
   display: flex;
@@ -9,26 +8,14 @@
   font-weight: 500;
   font-size: 20px;
   border-radius: 5px;
-  background-color: colors.$main-orange;
+  background-color: $main-orange;
   border: none;
-  color: colors.$main-white;
+  color: $main-white;
   transition: transform 0.5s;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  &.gray {
-    background-color: colors.$main-gray;
-  }
-
-  &.blue {
-    background-color: #00ACFF;
-  }
-
-  &.black {
-    background-color: colors.$main-black;
   }
 }

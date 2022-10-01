@@ -1,36 +1,67 @@
 @use '../../../../assets/styles/variables.scss' as *;
 
 .header {
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-around;
-    place-items: center;
-    z-index: 1;
-    background-color: $main-white;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  place-items: center;
+  z-index: 1;
+  background-color: $main-white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
-    &-logo {
-        margin-left: auto;
-    }
+  &-logo {
+    margin-left: auto;
+  }
 
-    &-navigation {
-        display: flex;
-    }
+  & .headerMenu {
+    display: none;
+  }
 
-    &-navigation-items {
-        margin-right: 38px;
-        font-weight: 500;
-    
-        &:last-child {
-            margin-right: 0;
+  .dark-theme & {
+    background-color: $main-dark-view-2;
+    color: $main-white;
+  }
+}
+
+@media screen and (max-device-width: 400px) {
+  .header {
+    height: 50px;
+
+    & .headerMenu {
+      display: block;
+      background: none;
+      border: none;
+
+      & span {
+        color: $main-black;
+        font-size: 25px;
+
+        .dark-theme & {
+          color: $main-white;
         }
+      }
     }
-    
-    .dark-theme &{
-        background-color: $main-dark-view-2;
-        color: $main-white;
+
+    & .navigation {
+      display: none;
+      position: absolute;
+      height: 175px;
+      width: 75px;
+      background-color: $main-dark-view-2;
+      right: 10px;
+      top: 60px;
+
+      & a {
+        margin-right: 0;
+      }
     }
+
+    & .active {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }

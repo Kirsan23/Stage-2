@@ -69,3 +69,37 @@
     transform: translateX(0);
   }
 }
+
+@media screen and (max-device-width: 400px) {
+  .teamMember {
+    padding: 50px 0;
+     
+    & .card {
+      margin-right: 0;
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-footer {
+
+        &-name {
+          font-size: 20px;
+          margin-bottom: 10px;
+          padding-top: 25px;
+        }
+  
+        &-prof {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  
+    & .bottomContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

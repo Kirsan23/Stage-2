@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { DarkModeContext } from '../../components/Context';
+import { ThemeContext } from '../../components/Context';
 import './Typography.scss';
 
 export const Typography = (props) => {
-  const { darkMode } = useContext(DarkModeContext);
+  const { theme } = useContext(ThemeContext);
   const { children, variant, component = `span`, color, className } = props;
   const Tag = component;
 
   return (
-    <Tag className={`typography ${variant || ''} ${(color !== 'gray' && darkMode) ? 'white' : (color || '')} ${className || ''}`}>
+    <Tag
+      className={`typography ${variant || ''} ${
+        color !== 'gray' && color !== 'orange' && theme === 'dark'
+          ? 'white'
+          : color
+      } ${className || ''}`}
+    >
       {children}
     </Tag>
   );

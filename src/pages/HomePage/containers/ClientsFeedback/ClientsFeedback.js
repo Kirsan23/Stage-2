@@ -1,12 +1,10 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Typography } from '../../../../components/Typography';
 import { Slider } from '../../../../components/Slider/';
 import './ClientsFeedback.scss';
 
 export const ClientsFeedback = () => {
-  // TODO: use https://fakerapi.it/en for this section
-  // TODO: useRef for reviews-DONE!
   const reviewsRef = useRef([
     {
       id: 1,
@@ -48,26 +46,35 @@ export const ClientsFeedback = () => {
       review:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit a laoreet libero dis eget maecenas bibendum. Morbi lacinia eu, etiam volutpat morbi et amet, sagittis adipiscing.',
     },
-  ]);
+  ]).current;
+
+  // ? Can I get height in component "Slider"?
+  const [divHeight, setDivHeight] = useState(0);
+  const height = useRef(null);
+
+  useEffect (() => {
+    setDivHeight(height.current.clientHeight);
+  },[])
+
 
   return (
     <section
-      className='clients-feedback'
+      className='clientsFeedback'
       id='clients'
     >
-      <div className='main-block'>
+      <div className='sectionWrapper'>
         <InfoBlock
           title='Clients Feedback'
           heading='Some Great Words From Our Clients'
           highlight='Great Words'
           button='none'
         />
-        <Slider height='250px'>
-          {reviewsRef.current.map(({ id, name, position, photo, review }) => (
-            <div key={id} className='review-card'>
-              <img className='review-card-photo' src={photo} alt='Oh...' />
+        <Slider height={divHeight}>
+          {reviewsRef.map(({ id, name, position, photo, review }) => (
+            <div ref={height} key={id} className='review'>
+              <img className='card-photo' src={photo} alt='Oh...' />
               <Typography
-                className='review-card-name'
+                className='card-name'
                 component='h4'
                 variant='h4'
                 color='white'
@@ -75,7 +82,7 @@ export const ClientsFeedback = () => {
                 {name}
               </Typography>
               <Typography
-                className='review-card-position'
+                className='card-position'
                 component='h6'
                 variant='h6'
                 color='white'
@@ -83,7 +90,7 @@ export const ClientsFeedback = () => {
                 {position}
               </Typography>
               <Typography
-                className='review-card-text'
+                className='card-text'
                 component='p'
                 color='white'
               >

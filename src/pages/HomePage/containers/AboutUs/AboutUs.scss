@@ -4,10 +4,6 @@
   background-color: $main-white;
   padding: 120px 0;
 
-  &-img {
-    transform: translateX(-20px);
-  }
-
   &-info {
     transform: translateX(-30px);
   }
@@ -24,6 +20,10 @@
 .topContainer {
   display: flex;
   margin-bottom: 60px;
+
+  &-img {
+    transform: translateX(-20px);
+  }
 }
 
 .bottomContainer {
@@ -78,6 +78,41 @@
 
     .dark-theme & {
       background-color: $main-dark-view-1;
+    }
+  }
+}
+
+@media screen and (max-device-width: 400px) {
+  .aboutUs {
+    padding: 50px 0;
+    
+    & .topContainer {
+      flex-wrap: wrap;
+      justify-content: center;
+  
+      &-img {
+        width: 75%;
+        margin-bottom: 50px;
+        transform: translateX(0);
+      }
+    }
+
+    &-info {
+      transform: translateX(0);
+    }
+  
+    & .bottomContainer {
+      flex-wrap: wrap;
+      justify-content: center;
+  
+      &-card {
+        margin-bottom: 25px;
+        margin-right: 0;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

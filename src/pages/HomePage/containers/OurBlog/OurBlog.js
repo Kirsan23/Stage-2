@@ -1,11 +1,11 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Slider } from '../../../../components/Slider';
 import { Typography } from '../../../../components/Typography';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './OurBlog.scss';
 
 export const OurBlog = () => {
-  const reviewsRef = useRef([
+  const reviews = useRef([
     {
       id: 1,
       name: 'Cristofer Westervelt',
@@ -51,36 +51,69 @@ export const OurBlog = () => {
       text: '35 Stellar Graphic Design Blogs to Keep You Educated and Inspired',
       date: `January 25, 2021 5 min Read`,
     },
-  ]);
+  ]).current;
+
+  // ? Can I get height in component "Slider"?
+  const [divHeight, setDivHeight] = useState(0);
+  const height = useRef(null);
+
+  useEffect(() => {
+    setDivHeight(height.current.clientHeight);
+  }, []);
 
   return (
-    <section className='our-blog' id='ourBlog'>
-      <div className='our-blog main-block'>
+    <section className='ourBlog' id='ourBlog'>
+      <div className='sectionWrapper'>
         <InfoBlock
           title='Our Blog'
           heading='Our Latest Blogs Will Keep Everyone Updated'
           highlight='Blogs Will Keep'
           button='none'
         ></InfoBlock>
-        <Slider height='295px'>
-          {reviewsRef.current.map(({ id, name, position, photo, picture, text, date }) => (
-            <div key={id} className='blog-card'>
-              <div className='blog-card-left'>
-                <Typography className='blog-card-position' component='h6' variant='h6' color='orange'>
-                  {position}
-                </Typography>
-                <Typography className='blog-card-text' component='h4' variant='h4'>{text}</Typography>
-                <div className='blog-card-user'>
-                  <img className='blog-card-photo' src={photo} alt='Oh...' />
-                  <div className='blog-card-user-info'>
-                    <Typography className='blog-card-name' component='h5' variant='h5'>{name}</Typography>
-                    <Typography className='blog-card-date' component='p' color='gray'>{date}</Typography>
+        <Slider height={divHeight}>
+          {reviews.map(
+            ({ id, name, position, photo, picture, text, date }) => (
+              <div ref={height} key={id} className='card'>
+                <div className='card-left'>
+                  <Typography
+                    className='card-position'
+                    component='h6'
+                    variant='h6'
+                    color='orange'
+                  >
+                    {position}
+                  </Typography>
+                  <Typography
+                    className='card-text'
+                    component='h4'
+                    variant='h4'
+                  >
+                    {text}
+                  </Typography>
+                  <div className='card-user'>
+                    <img className='card-photo' src={photo} alt='Oh...' />
+                    <div className='card-user-info'>
+                      <Typography
+                        className='card-name'
+                        component='h5'
+                        variant='h5'
+                      >
+                        {name}
+                      </Typography>
+                      <Typography
+                        className='card-date'
+                        component='p'
+                        color='gray'
+                      >
+                        {date}
+                      </Typography>
+                    </div>
                   </div>
                 </div>
+                <img className='card-picture' src={picture} alt='Oh...' />
               </div>
-              <img className='blog-card-picture' src={picture} alt='Oh...' />
-            </div>
-          ))}
+            )
+          )}
         </Slider>
       </div>
     </section>

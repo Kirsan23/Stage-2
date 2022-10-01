@@ -41,6 +41,8 @@
         flex-wrap: wrap;
         height: 900px;
         flex-direction: column;
+        align-content: center;
+        justify-content: center;
 
         :nth-child(odd) {
           margin-bottom: 30px;
@@ -78,13 +80,57 @@
             left: 0;
             bottom: 0;
             opacity: 0;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.8);
             pointer-events: none;
             transition: opacity 0.3s;
           }
 
           &:hover:before {
             opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 400px) {
+  .ourWork {
+    padding-bottom: 50px;
+
+    & .tabWrapper {
+      & .list {
+        margin-bottom: 50px;
+
+        &-item {
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      & .tabPanel {
+        width: 100%;
+        justify-content: center;
+
+        & .worksContainer {
+          width: 100%;
+          height: auto;
+          flex-direction: unset;
+
+          :nth-child(even) {
+            height: 470px;
+          }
+
+          :nth-child(odd) {
+            height: 370px;
+          }
+
+          &-img {
+            margin-right: 0;
+            margin-bottom: 25px;
           }
         }
       }

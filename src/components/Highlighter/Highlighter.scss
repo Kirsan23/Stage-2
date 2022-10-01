@@ -27,3 +27,17 @@
     color: colors.$main-white;
   }
 }
+
+@media screen and (max-device-width: 400px) {
+  .highlighter {
+    &.h1 {
+      font-size: 31.25px;
+      font-weight: 700;
+    }
+
+    &.h2 {
+      font-size: 25px;
+      font-weight: 600;
+    }
+  }
+}

@@ -3,9 +3,12 @@
 
 .social_block {
   display: flex;
+  z-index: 1;
 
   &.vertical {
     position: fixed;
+    // position: sticky;
+    top: 25%;
     right: 0;
     width: 40px;
     flex-wrap: wrap;

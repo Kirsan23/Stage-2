@@ -1,17 +1,14 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
-import { useContext, useRef } from 'react';
-import { DarkModeContext } from '../../../../components/Context';
 import { Typography } from '../../../../components/Typography';
 import { Highlighter } from '../../../../components//Highlighter';
+import { useRef } from 'react';
 import './ContactUs.scss';
 
 export const ContactUs = () => {
-  const { darkMode } = useContext(DarkModeContext);
-  // TODO: useRef here for contacts-DONE!
-  const contactsRef = useRef([
+  const contacts = useRef([
     {
       id: 1,
-      icon: 'icon-mail',
+      icon: require('../../../../img/mail.png'),
       title: 'Drop a line',
       contactsType: 'Mail Us',
       item1: 'Support87@gmial.com',
@@ -19,7 +16,7 @@ export const ContactUs = () => {
     },
     {
       id: 2,
-      icon: 'icon-phone-call',
+      icon: require('../../../../img/phone-call.png'),
       title: '24/7 Service',
       contactsType: 'Call Us',
       item1: '+880 265 98745 ',
@@ -28,36 +25,33 @@ export const ContactUs = () => {
     },
     {
       id: 3,
-      icon: 'icon-map-pin',
+      icon: require('../../../../img/map-pin.png'),
       title: 'Location',
       contactsType: 'Visit Us',
       item1: '158 ralegih sit, houston, yk 5896,uk',
     },
-  ]);
+  ]).current;
 
   return (
-    <section
-      className={`contactUs ${darkMode ? `dark-theme` : `light-theme`}`}
-      id='contactUs'
-    >
-      <div className='contactUs-wrapper'>
+    <section className='contactUs' id='contactUs'>
+      <div className='sectionWrapper'>
         <InfoBlock
           title='Contact Us'
           heading='Feel Free to Contact With Us'
           highlight='Free to Contact'
           button='none'
         />
-        <div className='contacts-cards'>
-          {contactsRef.current.map(
+        <div className='cards'>
+          {contacts.map(
             ({ id, icon, title, contactsType, item1, item2, add }) => (
-              <div key={id} className='contacts-card'>
+              <div key={id} className='card'>
                 <div className='card-top'>
-                  <div className='card-top-icon'>
-                    <span className={`${icon}`} />
+                  <div className='icon'>
+                    <img src={icon} alt='Oh...' />
                   </div>
-                  <div className='card-title'>
+                  <div className='title'>
                     <Typography
-                      className='card-title'
+                      className='title-name'
                       component='h4'
                       variant='h4'
                       color='orange'
@@ -65,7 +59,7 @@ export const ContactUs = () => {
                       {title}
                     </Typography>
                     <Typography
-                      className='card-contactsType'
+                      className='title-contactsType'
                       component='h3'
                       variant='h3'
                     >
@@ -75,25 +69,21 @@ export const ContactUs = () => {
                 </div>
                 <div className='card-bottom'>
                   <Typography
-                    className='card-item1'
+                    className='item1'
                     component='h5'
                     variant='h5'
                     color='gray'
                   >
                     {item1}
                     {add && (
-                      <Typography
-                        className='card-add'
-                        variant='h5'
-                        color='orange'
-                      >
+                      <Typography className='add' variant='h5' color='orange'>
                         {add}
                       </Typography>
                     )}
                   </Typography>
                   {item2 && (
                     <Typography
-                      className='card-item2'
+                      className='item2'
                       component='h5'
                       variant='h5'
                       color='gray'
@@ -106,44 +96,31 @@ export const ContactUs = () => {
             )
           )}
         </div>
-        <div className='feedback_block'>
+        <div className='feedback'>
           <img
-            className='feedback_block-img'
+            className='feedback-img'
             src={require(`../../../../img/ContactUs.png`)}
             alt='Oh...'
           />
-          <div className='feedback_form'>
+          <div className='feedbackForm'>
             <Highlighter
               heading='Feel Free to Contact With Us'
               highlight='Free to Contact'
-              className='feedback_form-title'
+              // className='feedback_form-title'
             />
-            <form className='feedback_form-data_fields'>
-              <input
-                type='text'
-                placeholder='Name'
-                className='data_field name'
-              />
-              <input
-                type='email'
-                placeholder='Email'
-                className='data_field email'
-              />
-              <input
-                type='tel'
-                placeholder='Mobile No'
-                className='data_field tel'
-              />
+            <form className='dataFields'>
+              <input type='text' placeholder='Name' className='dataField' />
+              <input type='email' placeholder='Email' className='dataField' />
+              <input type='tel' placeholder='Mobile No' className='dataField' />
               <input
                 type='text'
                 placeholder='Subject'
-                className='data_field subject'
+                className='dataField subject'
               />
-              {/* TODO: use Textarea tag here */}
-              <input
+              <textarea
                 type='text'
                 placeholder='Send Massage'
-                className='data_field massage'
+                className='dataField massage'
               />
               <input type='submit' value='Send Massage' className='btn' />
             </form>

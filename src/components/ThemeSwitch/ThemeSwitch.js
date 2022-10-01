@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { DarkModeContext } from '../Context';
+import { ThemeContext } from '../Context';
 
 export const ThemeSwitch = () => {
-  const { toggleDarkMode } = useContext(DarkModeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   const handleClick = () => {
-    toggleDarkMode();
+    toggleTheme();
   };
 
   return (
-    <span className='icon-Dark' onClick={handleClick}/>
+    <span className='icon-Dark' style={{cursor: 'pointer'}} onClick={handleClick}/>
   );
 }

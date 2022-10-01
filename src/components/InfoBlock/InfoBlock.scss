@@ -1,31 +1,41 @@
 @use '../../assets/styles/variables.scss' as *;
 
 .infoBlock {
-    width: 570px;
+  width: 100%;
 
-    &-title {
-        margin-bottom: 25px;
+  &-title {
+    margin-bottom: 25px;
 
-        .dark-theme & {
-            color: $main-white;
-          }
+    .dark-theme & {
+      color: $main-white;
     }
+  }
 
-    &-highlighter {
-        margin-bottom: 15px;
+  &-highlighter {
+    margin-bottom: 15px;
+  }
+
+  &-paragraph {
+    margin-bottom: 50px;
+
+    &.secondary {
+      margin-bottom: 20px;
     }
+  }
 
-    &-paragraph {
-        margin-bottom: 50px;
+  &-title,
+  &-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    color: $main-gray;
+  }
+}
 
-        &.secondary {
-            margin-bottom: 20px;
-        }
-    }
-
-    &-title, &-paragraph {
-        font-size: 16px;
-        font-weight: 400;
-        color: $main-gray;
-    }
+@media screen and (max-device-width: 400px) {
+  .infoBlock {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

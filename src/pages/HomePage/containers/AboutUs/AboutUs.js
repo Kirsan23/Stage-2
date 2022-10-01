@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Typography } from '../../../../components/Typography';
-import { InfoBlock } from '../../../../components/InfoBlock/InfoBlock';
+import { InfoBlock } from '../../../../components/InfoBlock';
 import './AboutUs.scss';
 
 export const AboutUs = () => {
@@ -29,13 +29,13 @@ export const AboutUs = () => {
       icon: 'icon-share-box-line',
       color: 'black',
     },
-  ]);
+  ]).current;
   return (
     <section className='aboutUs' id='aboutUs'>
       <div className='sectionWrapper'>
         <div className='topContainer'>
           <img
-            className='aboutUs-img'
+            className='topContainer-img'
             src={require(`../../../../img/about-us-img.png`)}
             alt='Oh...'
           />
@@ -60,7 +60,7 @@ export const AboutUs = () => {
           </div>
         </div>
         <div className='bottomContainer'>
-          {cardsRef.current.map(({ id, text, icon, color }) => (
+          {cardsRef.map(({ id, text, icon, color }) => (
             <div key={id} className='bottomContainer-card'>
               <div className={`bottomContainer-card-icon ${color}`}>
                 <span className={`${icon}`} />
