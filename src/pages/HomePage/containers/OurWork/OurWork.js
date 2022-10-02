@@ -3,7 +3,6 @@ import { Typography } from '../../../../components/Typography';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { createApi } from 'unsplash-js';
 import { useState, useEffect } from 'react';
-import { PacmanLoader } from 'react-spinners';
 import './OurWork.scss';
 
 const unsplash = createApi({
@@ -18,25 +17,40 @@ const processResponseData = (image) => {
 };
 
 export const OurWork = () => {
-
   const [images, setImages] = useState({
-    testTab: [],
     firstTab: [],
     secondTab: [],
     thirdTab: [],
+    fourthTab: [],
   });
 
-  const testConst = (array, number) => {
+  const getRandomImagesFromTabs = (array, number) => {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
 
-    return shuffled.slice(0 , number);
-  }
+    return shuffled.slice(0, number);
+  };
+
+  const randomTab = (array) => {
+    const [
+      randomImagesFromFirstTab,
+      randomImagesFromSecondTab,
+      randomImagesFromThirdTab,
+    ] = array.map((tab) => getRandomImagesFromTabs(tab, 2));
+
+    const mergeImagesFromTabs = [
+      ...randomImagesFromFirstTab,
+      ...randomImagesFromSecondTab,
+      ...randomImagesFromThirdTab,
+    ];
+
+    return mergeImagesFromTabs;
+  };
 
   useEffect(() => {
     const fetchImagesUrls = async (collectionIds = []) => {
       if (!collectionIds.length) return;
 
-      const [firstTab, secondTab, thirdTab] = await Promise.all(
+      const [secondTab, thirdTab, fourthTab] = await Promise.all(
         collectionIds.map((id) =>
           unsplash.photos.getRandom({
             collectionIds: [id],
@@ -45,19 +59,21 @@ export const OurWork = () => {
         )
       );
 
-      setImages({
-        firstTab: firstTab.response.map(processResponseData),
+      const tabs = {
         secondTab: secondTab.response.map(processResponseData),
         thirdTab: thirdTab.response.map(processResponseData),
-        // testTab: testConst(images.firstTab, 2)
-      }, console.log(images.firstTab, images.testTab));
-      // setImages(testTab: images.firstTab[Math.floor(Math.random() * images.firstTab.length)])
-      console.log(images.firstTab, 'in func')
-    };
+        fourthTab: fourthTab.response.map(processResponseData),
+      };
 
+      const mergeTabs = {
+        ...tabs,
+        firstTab: randomTab([tabs.secondTab, tabs.thirdTab, tabs.fourthTab]),
+      };
+
+      setImages(mergeTabs);
+    };
     fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570]);
 
-    // ! https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency (fix 'useEffect has missing dependencies')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -96,7 +112,24 @@ export const OurWork = () => {
 
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {!images.firstTab ? <PacmanLoader color='#FF5300' /> : images.firstTab.map(({ id, url }) => ( // ! Remove testTab!
+              {images.firstTab.map(
+                (
+                  { id, url } // ! Remove testTab!
+                ) => (
+                  <div
+                    key={id}
+                    className='worksContainer-img'
+                    style={{
+                      backgroundImage: `url(${url})`,
+                    }}
+                  />
+                )
+              )}
+            </div>
+          </TabPanel>
+          <TabPanel className='tabPanel'>
+            <div className='worksContainer'>
+              {images.secondTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
@@ -109,7 +142,7 @@ export const OurWork = () => {
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {!images.secondTab ? <PacmanLoader color='#FF5300' /> : images.secondTab.map(({ id, url }) => (
+              {images.thirdTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
@@ -122,20 +155,7 @@ export const OurWork = () => {
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {!images.thirdTab ? <PacmanLoader color='#FF5300' /> : images.thirdTab.map(({ id, url }) => (
-                <div
-                  key={id}
-                  className='worksContainer-img'
-                  style={{
-                    backgroundImage: `url(${url})`,
-                  }}
-                />
-              ))}
-            </div>
-          </TabPanel>
-          <TabPanel className='tabPanel'>
-            <div className='worksContainer'>
-              {!images.testTab ? <PacmanLoader color='#FF5300' /> : images.testTab.map(({ id, url }) => (
+              {images.fourthTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
