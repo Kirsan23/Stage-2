@@ -9,17 +9,17 @@ import './TeamMember.scss';
 
 const TeamMember = () => {
   const dispatch = useDispatch();
-  const usersTest = useSelector((state) => state.users);
-  const userStatus = useSelector((state) => state.users.status);
+  const users = useSelector((state) => state.users);
+  const usersStatus = useSelector((state) => state.users.status);
 
   useEffect(() => {
-    if (userStatus === 'idle') {
+    if (usersStatus === 'idle') {
       dispatch(fetchUsers());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userStatus, dispatch]);
+  }, [usersStatus, dispatch]);
 
-  console.log(usersTest);
+  console.log(users);
 
   return (
     <section className='teamMember'>
@@ -30,11 +30,11 @@ const TeamMember = () => {
           highlight='Some Awesome'
           button='none'
         />
-        {userStatus !== 'succeeded' ? (
+        {usersStatus !== 'succeeded' ? (
           <ScaleLoader className='spinner' color='#FF5300' width='10px' height='50px' />
         ) : (
           <div className='bottomContainer'>
-            {usersTest.users.map(({ name, position, photo }) => (
+            {users.users.map(({ name, position, photo }) => (
               <div key={name} className='card'>
                 <div
                   className='card-top'

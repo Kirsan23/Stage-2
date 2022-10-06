@@ -3,79 +3,91 @@ import { Typography } from '../../../../components/Typography';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { createApi } from 'unsplash-js';
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchImages } from './ourWorkSlice';
+import { ScaleLoader } from 'react-spinners';
 import './OurWork.scss';
 
-const unsplash = createApi({
-  accessKey: `${process.env.REACT_APP_NOTHING_INTERESTING}`,
-});
+// const unsplash = createApi({
+//   accessKey: `${process.env.REACT_APP_NOTHING_INTERESTING}`,
+// });
 
-const processResponseData = (image) => {
-  return {
-    id: image.id,
-    url: image.urls.regular,
-  };
-};
+// const processResponseData = (image) => {
+//   return {
+//     id: image.id,
+//     url: image.urls.regular,
+//   };
+// };
 
 export const OurWork = () => {
-  const [images, setImages] = useState({
-    firstTab: [],
-    secondTab: [],
-    thirdTab: [],
-    fourthTab: [],
-  });
+  const dispatch = useDispatch();
+  const imagesTest = useSelector((state) => state.images);
+  const imagesStatus = useSelector((state) => state.images.status);
 
-  const getRandomImagesFromTabs = (array, number) => {
-    const shuffled = [...array].sort(() => 0.5 - Math.random());
+  // const [images, setImages] = useState({
+  //   firstTab: [],
+  //   secondTab: [],
+  //   thirdTab: [],
+  //   fourthTab: [],
+  // });
 
-    return shuffled.slice(0, number);
-  };
+  // const getRandomImagesFromTabs = (array, number) => {
+  //   const shuffled = [...array].sort(() => 0.5 - Math.random());
 
-  const randomTab = (array) => {
-    const [
-      randomImagesFromFirstTab,
-      randomImagesFromSecondTab,
-      randomImagesFromThirdTab,
-    ] = array.map((tab) => getRandomImagesFromTabs(tab, 2));
+  //   return shuffled.slice(0, number);
+  // };
 
-    const mergeImagesFromTabs = [
-      ...randomImagesFromFirstTab,
-      ...randomImagesFromSecondTab,
-      ...randomImagesFromThirdTab,
-    ];
+  // const randomTab = (array) => {
+  //   const [
+  //     randomImagesFromFirstTab,
+  //     randomImagesFromSecondTab,
+  //     randomImagesFromThirdTab,
+  //   ] = array.map((tab) => getRandomImagesFromTabs(tab, 2));
 
-    return mergeImagesFromTabs;
-  };
+  //   const mergeImagesFromTabs = [
+  //     ...randomImagesFromFirstTab,
+  //     ...randomImagesFromSecondTab,
+  //     ...randomImagesFromThirdTab,
+  //   ];
+
+  //   return mergeImagesFromTabs;
+  // };
 
   useEffect(() => {
-    const fetchImagesUrls = async (collectionIds = []) => {
-      if (!collectionIds.length) return;
+    if (imagesStatus === 'idle') {
+      dispatch(fetchImages());
+    }
+    // const fetchImagesUrls = async (collectionIds = []) => {
+    //   if (!collectionIds.length) return;
 
-      const [secondTab, thirdTab, fourthTab] = await Promise.all(
-        collectionIds.map((id) =>
-          unsplash.photos.getRandom({
-            collectionIds: [id],
-            count: 6,
-          })
-        )
-      );
+    //   const [secondTab, thirdTab, fourthTab] = await Promise.all(
+    //     collectionIds.map((id) =>
+    //       unsplash.photos.getRandom({
+    //         collectionIds: [id],
+    //         count: 6,
+    //       })
+    //     )
+    // );
 
-      const tabs = {
-        secondTab: secondTab.response.map(processResponseData),
-        thirdTab: thirdTab.response.map(processResponseData),
-        fourthTab: fourthTab.response.map(processResponseData),
-      };
+    //   const tabs = {
+    //     secondTab: secondTab.response.map(processResponseData),
+    //     thirdTab: thirdTab.response.map(processResponseData),
+    //     fourthTab: fourthTab.response.map(processResponseData),
+    //   };
 
-      const mergeTabs = {
-        ...tabs,
-        firstTab: randomTab([tabs.secondTab, tabs.thirdTab, tabs.fourthTab]),
-      };
+    //   const mergeTabs = {
+    //     ...tabs,
+    //     firstTab: randomTab([tabs.secondTab, tabs.thirdTab, tabs.fourthTab]),
+    //   };
 
-      setImages(mergeTabs);
-    };
-    fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570]);
+    //   setImages(mergeTabs);
+    // };
+    // fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [imagesStatus, dispatch]);
+
+  console.log(imagesTest);
 
   return (
     <section className='ourWork' id='ourWork'>
@@ -112,9 +124,9 @@ export const OurWork = () => {
 
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {images.firstTab.map(
+              {/* {images.firstTab.map(
                 (
-                  { id, url } // ! Remove testTab!
+                  { id, url }
                 ) => (
                   <div
                     key={id}
@@ -124,12 +136,12 @@ export const OurWork = () => {
                     }}
                   />
                 )
-              )}
+              )} */}
             </div>
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {images.secondTab.map(({ id, url }) => (
+              {/* {images.secondTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
@@ -137,12 +149,12 @@ export const OurWork = () => {
                     backgroundImage: `url(${url})`,
                   }}
                 />
-              ))}
+              ))} */}
             </div>
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {images.thirdTab.map(({ id, url }) => (
+              {/* {images.thirdTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
@@ -150,12 +162,12 @@ export const OurWork = () => {
                     backgroundImage: `url(${url})`,
                   }}
                 />
-              ))}
+              ))} */}
             </div>
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {images.fourthTab.map(({ id, url }) => (
+              {/* {images.fourthTab.map(({ id, url }) => (
                 <div
                   key={id}
                   className='worksContainer-img'
@@ -163,7 +175,7 @@ export const OurWork = () => {
                     backgroundImage: `url(${url})`,
                   }}
                 />
-              ))}
+              ))} */}
             </div>
           </TabPanel>
         </Tabs>
