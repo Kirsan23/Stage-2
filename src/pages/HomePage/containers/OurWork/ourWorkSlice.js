@@ -19,11 +19,11 @@ const initialState = {
   //   thirdTab: [],
   //   fourthTab: [],
   // },
-  // images: [],
-  firstTab: [],
-  secondTab: [],
-  thirdTab: [],
-  fourthTab: [],
+
+  // { secondTab: [], thirdTab: [], fourthTab: [] }
+
+  images: [],
+  tabs: [],
   status: 'idle',
   error: null,
 };
@@ -31,7 +31,7 @@ const initialState = {
 // fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570])
 
 export const fetchImages = createAsyncThunk(
-  'images/fetchImages',
+  'tabs/fetchImages',
   async (collectionIds = [528639, 'h4BD0NfPm6s', 8504570]) => {
     // if (!collectionIds.length) return;
 
@@ -44,7 +44,7 @@ export const fetchImages = createAsyncThunk(
       )
     );
 
-    // console.log(secondTab);
+    console.log(secondTab);
     // console.log(thirdTab);
     // console.log(fourthTab);
 
@@ -59,7 +59,7 @@ export const fetchImages = createAsyncThunk(
 );
 
 const imagesSlice = createSlice({
-  name: 'images',
+  name: 'tabs',
   initialState,
   reducers: {},
   extraReducers(builder) {
@@ -69,7 +69,10 @@ const imagesSlice = createSlice({
       })
       .addCase(fetchImages.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.images = state.images.concat(action.payload);
+        console.log(action.payload);
+        console.log(state.tabs);
+        state.tabs = state.tabs.concat(action.payload);  // ! .secondTab
+        // state.tabs = [...state.tabs, (action.payload)];
       })
       .addCase(fetchImages.rejected, (state, action) => {
         state.status = 'failed';
