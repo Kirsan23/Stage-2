@@ -3,23 +3,20 @@ import { InfoBlock } from '../../../../components/InfoBlock';
 import { SocialBlock } from '../../../../components/SocialBlock';
 import { Typography } from '../../../../components/Typography';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUsers } from './usersSlice';
+import { fetchUsersData } from '../../../../store/slices/usersSlice';
 import { ScaleLoader } from 'react-spinners';
 import './TeamMember.scss';
 
 const TeamMember = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
-  const usersStatus = useSelector((state) => state.users.status);
+  const users = useSelector((state) => state.usersData);
+  const usersStatus = useSelector((state) => state.usersData.status);
 
   useEffect(() => {
     if (usersStatus === 'idle') {
-      dispatch(fetchUsers());
+      dispatch(fetchUsersData());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [usersStatus, dispatch]);
-
-  console.log(users);
 
   return (
     <section className='teamMember'>
@@ -31,10 +28,15 @@ const TeamMember = () => {
           button='none'
         />
         {usersStatus !== 'succeeded' ? (
-          <ScaleLoader className='spinner' color='#FF5300' width='10px' height='50px' />
+          <ScaleLoader
+            className='spinner'
+            color='#FF5300'
+            width='10px'
+            height='50px'
+          />
         ) : (
           <div className='bottomContainer'>
-            {users.users.map(({ name, position, photo }) => (
+            {users.usersData.map(({ name, position, photo }) => (
               <div key={name} className='card'>
                 <div
                   className='card-top'

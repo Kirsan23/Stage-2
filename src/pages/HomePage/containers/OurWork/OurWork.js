@@ -1,93 +1,22 @@
 import { InfoBlock } from '../../../../components/InfoBlock';
 import { Typography } from '../../../../components/Typography';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { createApi } from 'unsplash-js';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchImages } from './ourWorkSlice';
+import { fetchImages } from '../../../../store/slices/tabsSlice';
 import { ScaleLoader } from 'react-spinners';
 import './OurWork.scss';
 
-// const unsplash = createApi({
-//   accessKey: `${process.env.REACT_APP_NOTHING_INTERESTING}`,
-// });
-
-// const processResponseData = (image) => {
-//   return {
-//     id: image.id,
-//     url: image.urls.regular,
-//   };
-// };
-
 export const OurWork = () => {
   const dispatch = useDispatch();
-  const imagesTest = useSelector((state) => state.images);
-  const imagesStatus = useSelector((state) => state.images.status);
-
-  // const [images, setImages] = useState({
-  //   firstTab: [],
-  //   secondTab: [],
-  //   thirdTab: [],
-  //   fourthTab: [],
-  // });
-
-  // const getRandomImagesFromTabs = (array, number) => {
-  //   const shuffled = [...array].sort(() => 0.5 - Math.random());
-
-  //   return shuffled.slice(0, number);
-  // };
-
-  // const randomTab = (array) => {
-  //   const [
-  //     randomImagesFromFirstTab,
-  //     randomImagesFromSecondTab,
-  //     randomImagesFromThirdTab,
-  //   ] = array.map((tab) => getRandomImagesFromTabs(tab, 2));
-
-  //   const mergeImagesFromTabs = [
-  //     ...randomImagesFromFirstTab,
-  //     ...randomImagesFromSecondTab,
-  //     ...randomImagesFromThirdTab,
-  //   ];
-
-  //   return mergeImagesFromTabs;
-  // };
+  const images = useSelector((state) => state.tabs);
+  const imagesStatus = useSelector((state) => state.tabs.status);
 
   useEffect(() => {
     if (imagesStatus === 'idle') {
       dispatch(fetchImages());
     }
-    // const fetchImagesUrls = async (collectionIds = []) => {
-    //   if (!collectionIds.length) return;
-
-    //   const [secondTab, thirdTab, fourthTab] = await Promise.all(
-    //     collectionIds.map((id) =>
-    //       unsplash.photos.getRandom({
-    //         collectionIds: [id],
-    //         count: 6,
-    //       })
-    //     )
-    // );
-
-    //   const tabs = {
-    //     secondTab: secondTab.response.map(processResponseData),
-    //     thirdTab: thirdTab.response.map(processResponseData),
-    //     fourthTab: fourthTab.response.map(processResponseData),
-    //   };
-
-    //   const mergeTabs = {
-    //     ...tabs,
-    //     firstTab: randomTab([tabs.secondTab, tabs.thirdTab, tabs.fourthTab]),
-    //   };
-
-    //   setImages(mergeTabs);
-    // };
-    // fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570]);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imagesStatus, dispatch]);
-
-  console.log(imagesTest);
 
   return (
     <section className='ourWork' id='ourWork'>
@@ -123,11 +52,16 @@ export const OurWork = () => {
           </TabList>
 
           <TabPanel className='tabPanel'>
-            <div className='worksContainer'>
-              {/* {images.firstTab.map(
-                (
-                  { id, url }
-                ) => (
+            {imagesStatus !== 'succeeded' ? (
+              <ScaleLoader
+                className='spinner'
+                color='#FF5300'
+                width='10px'
+                height='50px'
+              />
+            ) : (
+              <div className='worksContainer'>
+                {images.tabs.firstTab.map(({ id, url }) => (
                   <div
                     key={id}
                     className='worksContainer-img'
@@ -135,47 +69,78 @@ export const OurWork = () => {
                       backgroundImage: `url(${url})`,
                     }}
                   />
-                )
-              )} */}
+                ))}
+              </div>
+            )}
+          </TabPanel>
+          <TabPanel className='tabPanel'>
+            {imagesStatus !== 'succeeded' ? (
+              <ScaleLoader
+                className='spinner'
+                color='#FF5300'
+                width='10px'
+                height='50px'
+              />
+            ) : (
+              <div className='worksContainer'>
+                {images.tabs.secondTab.map(({ id, url }) => (
+                  <div
+                    key={id}
+                    className='worksContainer-img'
+                    style={{
+                      backgroundImage: `url(${url})`,
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+          </TabPanel>
+          <TabPanel className='tabPanel'>
+            <div className='worksContainer'>
+              {imagesStatus !== 'succeeded' ? (
+                <ScaleLoader
+                  className='spinner'
+                  color='#FF5300'
+                  width='10px'
+                  height='50px'
+                />
+              ) : (
+                <div className='worksContainer'>
+                  {images.tabs.thirdTab.map(({ id, url }) => (
+                    <div
+                      key={id}
+                      className='worksContainer-img'
+                      style={{
+                        backgroundImage: `url(${url})`,
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </TabPanel>
           <TabPanel className='tabPanel'>
             <div className='worksContainer'>
-              {/* {images.secondTab.map(({ id, url }) => (
-                <div
-                  key={id}
-                  className='worksContainer-img'
-                  style={{
-                    backgroundImage: `url(${url})`,
-                  }}
+              {imagesStatus !== 'succeeded' ? (
+                <ScaleLoader
+                  className='spinner'
+                  color='#FF5300'
+                  width='10px'
+                  height='50px'
                 />
-              ))} */}
-            </div>
-          </TabPanel>
-          <TabPanel className='tabPanel'>
-            <div className='worksContainer'>
-              {/* {images.thirdTab.map(({ id, url }) => (
-                <div
-                  key={id}
-                  className='worksContainer-img'
-                  style={{
-                    backgroundImage: `url(${url})`,
-                  }}
-                />
-              ))} */}
-            </div>
-          </TabPanel>
-          <TabPanel className='tabPanel'>
-            <div className='worksContainer'>
-              {/* {images.fourthTab.map(({ id, url }) => (
-                <div
-                  key={id}
-                  className='worksContainer-img'
-                  style={{
-                    backgroundImage: `url(${url})`,
-                  }}
-                />
-              ))} */}
+              ) : (
+                <div className='worksContainer'>
+                  {images.tabs.fourthTab.map(({ id, url }) => (
+                    <div
+                      key={id}
+                      className='worksContainer-img'
+                      style={{
+                        backgroundImage: `url(${url})`,
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </TabPanel>
         </Tabs>

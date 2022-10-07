@@ -12,28 +12,29 @@ const processResponseData = (image) => {
   };
 };
 
+const getRandomImagesFromTabs = (array, number) => {
+  const shuffled = [...array].sort(() => 0.5 - Math.random());
+
+  return shuffled.slice(0, number);
+};
+
+const randomTab = (array) =>
+  array.flatMap((tab) => getRandomImagesFromTabs(tab, 2));
+
 const initialState = {
-  // imagesTest: {
-  //   firstTab: [],
-  //   secondTab: [],
-  //   thirdTab: [],
-  //   fourthTab: [],
-  // },
-
-  // { secondTab: [], thirdTab: [], fourthTab: [] }
-
-  images: [],
-  tabs: [],
+  tabs: {
+    firstTab: [],
+    secondTab: [],
+    thirdTab: [],
+    fourthTab: [],
+  },
   status: 'idle',
   error: null,
 };
 
-// fetchImagesUrls([528639, 'h4BD0NfPm6s', 8504570])
-
 export const fetchImages = createAsyncThunk(
   'tabs/fetchImages',
   async (collectionIds = [528639, 'h4BD0NfPm6s', 8504570]) => {
-    // if (!collectionIds.length) return;
 
     const [secondTab, thirdTab, fourthTab] = await Promise.all(
       collectionIds.map((id) =>
@@ -44,17 +45,18 @@ export const fetchImages = createAsyncThunk(
       )
     );
 
-    console.log(secondTab);
-    // console.log(thirdTab);
-    // console.log(fourthTab);
-
     const tabs = {
       secondTab: secondTab.response.map(processResponseData),
       thirdTab: thirdTab.response.map(processResponseData),
       fourthTab: fourthTab.response.map(processResponseData),
     };
 
-    return tabs;
+    const mergedTabs = {
+      ...tabs,
+      firstTab: randomTab([tabs.secondTab, tabs.thirdTab, tabs.fourthTab]),
+    };
+
+    return mergedTabs;
   }
 );
 
@@ -69,10 +71,10 @@ const imagesSlice = createSlice({
       })
       .addCase(fetchImages.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        console.log(action.payload);
-        console.log(state.tabs);
-        state.tabs = state.tabs.concat(action.payload);  // ! .secondTab
-        // state.tabs = [...state.tabs, (action.payload)];
+        state.tabs = {
+          ...state.tabs,
+          ...action.payload,
+        };
       })
       .addCase(fetchImages.rejected, (state, action) => {
         state.status = 'failed';
