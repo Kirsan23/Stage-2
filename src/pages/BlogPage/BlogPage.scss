@@ -1,0 +1,43 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.blogPage {
+  margin: auto;
+
+   & .infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & .title {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    & .subtitle {
+      margin-bottom: 30px;
+    }
+
+    & .spinner {
+      // ! need to add animation!
+      // opacity: 0.5;
+      // transition: opacity 0.5s ease-in-out;
+    }
+   }
+
+  .dark-theme & {
+    background-color: $main-dark-bcg;
+  }
+}
+
+.pageBetweener {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+@media screen and (max-device-width: 400px) {
+  .blogPage {
+    margin: 100px auto 30px auto;
+  }
+}

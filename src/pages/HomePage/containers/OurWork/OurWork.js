@@ -62,13 +62,14 @@ export const OurWork = () => {
             ) : (
               <div className='worksContainer'>
                 {images.tabs.firstTab.map(({ id, url }) => (
-                  <div
-                    key={id}
-                    className='worksContainer-img'
-                    style={{
-                      backgroundImage: `url(${url})`,
-                    }}
-                  />
+                  <div key={id} className='imageContainer'>
+                    <img src={url} className='imageContainer-img' />
+                    <div className='imageContainer-hover'>
+                      <span className='icon-search'/>
+                      <Typography className='title' component='h4' variant='h4' color='white' >Latest work</Typography>
+                      <Typography className='subtitle' component='h6' variant='h6' color='white' >All</Typography>
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -84,13 +85,14 @@ export const OurWork = () => {
             ) : (
               <div className='worksContainer'>
                 {images.tabs.secondTab.map(({ id, url }) => (
-                  <div
-                    key={id}
-                    className='worksContainer-img'
-                    style={{
-                      backgroundImage: `url(${url})`,
-                    }}
-                  />
+                  <div key={id} className='imageContainer'>
+                    <img src={url} className='imageContainer-img' />
+                    <div className='imageContainer-hover'>
+                      <span className='icon-search'/>
+                      <Typography className='title' component='h4' color='white' >Latest work</Typography>
+                      <Typography className='subtitle' component='h6' color='white' >Graphic Design</Typography>
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -107,13 +109,14 @@ export const OurWork = () => {
               ) : (
                 <div className='worksContainer'>
                   {images.tabs.thirdTab.map(({ id, url }) => (
-                    <div
-                      key={id}
-                      className='worksContainer-img'
-                      style={{
-                        backgroundImage: `url(${url})`,
-                      }}
-                    />
+                    <div key={id} className='imageContainer'>
+                    <img src={url} className='imageContainer-img' />
+                    <div className='imageContainer-hover'>
+                      <span className='icon-search'/>
+                      <Typography className='title' component='h4' color='white' >Latest work</Typography>
+                      <Typography className='subtitle' component='h6' color='white' >UI/UX Design</Typography>
+                    </div>
+                  </div>
                   ))}
                 </div>
               )}
@@ -131,13 +134,14 @@ export const OurWork = () => {
               ) : (
                 <div className='worksContainer'>
                   {images.tabs.fourthTab.map(({ id, url }) => (
-                    <div
-                      key={id}
-                      className='worksContainer-img'
-                      style={{
-                        backgroundImage: `url(${url})`,
-                      }}
-                    />
+                    <div key={id} className='imageContainer'>
+                    <img src={url} className='imageContainer-img' />
+                    <div className='imageContainer-hover'>
+                      <span className='icon-search'/>
+                      <Typography className='title' component='h4' color='white' >Latest work</Typography>
+                      <Typography className='subtitle' color='white' >Web Development</Typography>
+                    </div>
+                  </div>
                   ))}
                 </div>
               )}
