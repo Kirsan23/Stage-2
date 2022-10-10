@@ -63,7 +63,7 @@ export const OurWork = () => {
               <div className='worksContainer'>
                 {images.tabs.firstTab.map(({ id, url }) => (
                   <div key={id} className='imageContainer'>
-                    <img src={url} className='imageContainer-img' />
+                    <img src={url} className='imageContainer-img' alt='Oh...'/>
                     <div className='imageContainer-hover'>
                       <span className='icon-search'/>
                       <Typography className='title' component='h4' variant='h4' color='white' >Latest work</Typography>
@@ -86,7 +86,7 @@ export const OurWork = () => {
               <div className='worksContainer'>
                 {images.tabs.secondTab.map(({ id, url }) => (
                   <div key={id} className='imageContainer'>
-                    <img src={url} className='imageContainer-img' />
+                    <img src={url} className='imageContainer-img' alt='Oh...'/>
                     <div className='imageContainer-hover'>
                       <span className='icon-search'/>
                       <Typography className='title' component='h4' color='white' >Latest work</Typography>
@@ -110,7 +110,7 @@ export const OurWork = () => {
                 <div className='worksContainer'>
                   {images.tabs.thirdTab.map(({ id, url }) => (
                     <div key={id} className='imageContainer'>
-                    <img src={url} className='imageContainer-img' />
+                    <img src={url} className='imageContainer-img' alt='Oh...'/>
                     <div className='imageContainer-hover'>
                       <span className='icon-search'/>
                       <Typography className='title' component='h4' color='white' >Latest work</Typography>
@@ -135,7 +135,7 @@ export const OurWork = () => {
                 <div className='worksContainer'>
                   {images.tabs.fourthTab.map(({ id, url }) => (
                     <div key={id} className='imageContainer'>
-                    <img src={url} className='imageContainer-img' />
+                    <img src={url} className='imageContainer-img' alt='Oh...'/>
                     <div className='imageContainer-hover'>
                       <span className='icon-search'/>
                       <Typography className='title' component='h4' color='white' >Latest work</Typography>

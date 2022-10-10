@@ -12,11 +12,11 @@ export const Navigation = (props) => {
   } = props;
 
   const navItemsRef = useRef([
-    { item: 'Home', hook: '#heroSection' },
+    { item: 'Home', hook: 'http://localhost:3000/' },
     { item: 'About Us', hook: '#aboutUs' },
     { item: 'Our Work', hook: '#ourWork' },
     { item: 'Clients', hook: '#clients' },
-    { item: 'Our Blog', hook: '#ourBlog' },
+    { item: 'Our Blog', hook: 'http://localhost:3000/blog-page/' },
     { item: 'Contact Us', hook: '#contactUs' },
   ]).current;
 
