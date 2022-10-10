@@ -13,14 +13,41 @@
       margin-bottom: 10px;
       font-weight: bold;
     }
+
     & .subtitle {
       margin-bottom: 30px;
     }
 
+
     & .spinner {
-      // ! need to add animation!
-      // opacity: 0.5;
-      // transition: opacity 0.5s ease-in-out;
+      animation-duration: 2s, 1s;
+      animation-name: pulse, slide;
+      animation-iteration-count: infinite, 1;
+      animation-direction: alternate-reverse, normal;
+      animation-delay: 1s, 0s;
+      animation-fill-mode:backwards;
+    }
+
+    @keyframes pulse {
+      from {
+        scale: 1;
+      }
+
+      to {
+        scale: 1.2;
+      }
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(260%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
    }
 
@@ -38,6 +65,10 @@
 
 @media screen and (max-device-width: 400px) {
   .blogPage {
-    margin: 100px auto 30px auto;
+    margin: 100px auto 60px auto;
+
+    & .subtitle {
+      margin-bottom: 50px;
+    }
   }
 }
