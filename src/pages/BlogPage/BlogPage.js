@@ -2,11 +2,15 @@ import { Typography } from '../../components/Typography';
 import { ClockLoader } from 'react-spinners';
 import { Header } from '../../containers/Header';
 import { Footer } from '../../containers/Footer';
+import { useContext } from 'react';
+import { ThemeContext } from '../../components/Context';
 import './BlogPage.scss';
 
 export const BlogPage = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className='pageBetweener'>
+    <div className={`${theme}-theme pageBetweener`}>
       <Header />
       <section className='blogPage'>
         <div className='sectionWrapper'>

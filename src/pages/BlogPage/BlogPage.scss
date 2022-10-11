@@ -1,9 +1,12 @@
 @use '../../assets/styles/variables.scss' as *;
 
 .blogPage {
-  margin: auto;
+  margin: 100px auto auto auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
 
-   & .infoContainer {
+  & .infoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,14 +21,13 @@
       margin-bottom: 30px;
     }
 
-
     & .spinner {
       animation-duration: 2s, 1s;
       animation-name: pulse, slide;
       animation-iteration-count: infinite, 1;
       animation-direction: alternate-reverse, normal;
       animation-delay: 1s, 0s;
-      animation-fill-mode:backwards;
+      animation-fill-mode: backwards;
     }
 
     @keyframes pulse {
@@ -49,10 +51,10 @@
         opacity: 1;
       }
     }
-   }
+  }
 
   .dark-theme & {
-    background-color: $main-dark-bcg;
+    background-color: $main-dark-view-1;
   }
 }
 
@@ -65,7 +67,8 @@
 
 @media screen and (max-device-width: 400px) {
   .blogPage {
-    margin: 100px auto 60px auto;
+    margin: 50px auto auto auto;
+    padding: 50px 0;
 
     & .subtitle {
       margin-bottom: 50px;
