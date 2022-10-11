@@ -136,17 +136,17 @@
           height: auto;
           flex-direction: unset;
 
-          :nth-child(even) {
-            height: 470px;
-          }
-
-          :nth-child(odd) {
-            height: 370px;
-          }
-
-          &-img {
+          & .imageContainer {
             margin-right: 0;
             margin-bottom: 25px;
+
+            &:nth-child(even) {
+              height: 470px;
+            }
+  
+            &:nth-child(odd) {
+              height: 370px;
+            }
           }
         }
       }
