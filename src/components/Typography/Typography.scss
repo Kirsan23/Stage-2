@@ -1,24 +1,24 @@
 // as *
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .typography {
   font-weight: 400;
   font-size: 16px;
 
   &.orange {
-    color: colors.$main-orange;
+    color: $main-orange;
   }
 
   &.black {
-    color: colors.$main-black;
+    color: $main-black;
   }
 
   &.gray {
-    color: colors.$main-gray;
+    color: $main-gray;
   }
 
   &.white {
-    color: colors.$main-white;
+    color: $main-white;
   }
 
   &.body1 {
@@ -59,12 +59,6 @@
   &.h6 {
     font-size: 16px;
     font-weight: 400;
-  }
-
-  &.subtitle1 {
-  }
-
-  &.subtitle2 {
   }
 }
 

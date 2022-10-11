@@ -1,6 +1,6 @@
-import { Highlighter } from '../../../../components/Highlighter';
-import { ThemeSwitch } from '../../../../components/ThemeSwitch';
-import { Navigation } from '../../../../components/Navigation';
+import { Highlighter } from '../../components/Highlighter';
+import { ThemeSwitch } from '../../components/ThemeSwitch';
+import { Navigation } from '../../components/Navigation';
 import { useState } from 'react';
 import './Header.scss';
 

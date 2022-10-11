@@ -37,6 +37,5 @@ Navigation.propTypes = {
   variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   direction: PropTypes.oneOf(['horizontal', 'vertical']),
   color: PropTypes.oneOf(['black', 'white']),
-  // ! NEED TO FIX!
-  // className: PropTypes.string,
+  className: PropTypes.string,
 };

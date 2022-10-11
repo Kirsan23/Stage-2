@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createApi } from 'unsplash-js';
 
 const unsplash = createApi({
-  accessKey: `${process.env.REACT_APP_NOTHING_INTERESTING}`,
+  accessKey: '9H6YO1Ur07eWScjDtbIt2AXjtxk-Vewq68fLeyoDcB8',
 });
 
 const processResponseData = (image) => {

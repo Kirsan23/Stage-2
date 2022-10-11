@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables.scss' as colors;
+@use '../../assets/styles/variables.scss' as *;
 
 .sliderWrapper {
   display: flex;
@@ -69,16 +69,16 @@
 
   & .prevSlide {
     margin-right: 5px;
-    background-color: colors.$main-orange;
+    background-color: $main-orange;
   }
 
   & .resetSlide {
     margin-right: 5px;
-    background-color: colors.$main-black;
+    background-color: $main-black;
   }
 
   & .nextSlide {
-    background-color: colors.$main-gray;
+    background-color: $main-gray;
   }
 }
 

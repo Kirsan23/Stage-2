@@ -14,8 +14,6 @@ export const Highlighter = (props) => {
     className = 'highlighter',
     color = '',
   } = props;
-  // Can we reduce numbers of usage getExp function? Do we need to use it for every title?
-  // ? Don't understand how to do it!
   const parts = heading.split(new RegExp(`(${getExp(highlight)})`, 'gi'));
   const Tag = component;
 

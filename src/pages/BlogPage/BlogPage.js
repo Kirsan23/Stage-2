@@ -1,7 +1,7 @@
 import { Typography } from '../../components/Typography';
 import { ClockLoader } from 'react-spinners';
-import { Header } from '../HomePage/containers/Header';
-import { Footer } from '../HomePage/containers/Footer';
+import { Header } from '../../containers/Header';
+import { Footer } from '../../containers/Footer';
 import './BlogPage.scss';
 
 export const BlogPage = () => {

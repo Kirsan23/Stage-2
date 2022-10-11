@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { Typography } from '../../../../components/Typography';
-import { Highlighter } from '../../../../components/Highlighter';
-import { SocialBlock } from '../../../../components/SocialBlock';
-import { Navigation } from '../../../../components/Navigation';
-import { Button } from '../../../../components/Button';
+import { Typography } from '../../components/Typography';
+import { Highlighter } from '../../components/Highlighter';
+import { SocialBlock } from '../../components/SocialBlock';
+import { Navigation } from '../../components/Navigation';
+import { Button } from '../../components/Button';
 import './Footer.scss';
 
 export const Footer = () => {

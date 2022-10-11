@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Header } from './containers/Header';
+import { Header } from '../../containers/Header';
 import { HeroSection } from './containers/HeroSection';
 import { AboutUs } from './containers/AboutUs';
 import { OurExperience } from './containers/OurExperience';
@@ -9,7 +9,7 @@ import { ClientsFeedback } from './containers/ClientsFeedback';
 import { OurBlog } from './containers/OurBlog';
 import { ContactUs } from './containers/ContactUs';
 import { Map } from './containers/Map';
-import { Footer } from './containers/Footer';
+import { Footer } from '../../containers/Footer';
 import { ThemeContext } from '../../components/Context';
 
 export const HomePage = () => {
