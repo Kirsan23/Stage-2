@@ -23,7 +23,7 @@ export const Slider = (props) => {
 
   return (
     <div className='sliderWrapper'>
-      <div className='slider' style={{height: `${height}px`}}>
+      <div className='slider' style={{ height: `${height}px` }}>
         {children.map((children, id) => (
           <div
             key={id}
