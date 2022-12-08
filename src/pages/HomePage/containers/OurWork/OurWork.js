@@ -13,10 +13,6 @@ export const OurWork = () => {
   const images = useSelector((state) => state.tabs);
   const imagesStatus = useSelector((state) => state.tabs.status);
 
-  const handleClick = (index) => {
-    setTabIndex(index);
-  };
-
   useEffect(() => {
     if (imagesStatus === 'idle') {
       dispatch(fetchImages());

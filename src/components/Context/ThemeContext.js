@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const ThemeContext = createContext(localStorage.getItem('theme'));
 const THEMES = {
   light: 'light',
-  dark: 'dark'
-}
+  dark: 'dark',
+};
 const setThemeInLocalStorage = (theme) => {
   localStorage.setItem('theme', theme);
 };
@@ -15,14 +15,12 @@ function ThemeProvider(props) {
   const { children } = props;
   const toggleTheme = useCallback(() => {
     setTheme((prevState) =>
-      prevState === THEMES.light
-        ? THEMES.dark
-        : THEMES.light
+      prevState === THEMES.light ? THEMES.dark : THEMES.light
     );
   });
 
   useEffect(() => {
-    setThemeInLocalStorage(theme)
+    setThemeInLocalStorage(theme);
   }, [theme]);
 
   return (
@@ -34,6 +32,6 @@ function ThemeProvider(props) {
 
 export { ThemeContext, ThemeProvider };
 
-ThemeContext.PropTypes = {
+ThemeContext.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
 };

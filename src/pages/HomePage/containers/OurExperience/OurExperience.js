@@ -25,6 +25,7 @@ export const OurExperience = () => {
       text: 'Our Company',
     },
   ];
+
   return (
     <section className={`ourExperience`}>
       <div className='sectionWrapper'>
@@ -51,17 +52,8 @@ export const OurExperience = () => {
         <div className='rightContainer'>
           {cards.map(({ id, counter, text }) => (
             <div key={id} className='card'>
-              <Typography
-                className='card-counter'
-                // variant='h1'
-              >
-                {counter}
-              </Typography>
-              <Typography
-                className='card-text'
-                variant='h5'
-                color='gray'
-              >
+              <Typography className='card-counter'>{counter}</Typography>
+              <Typography className='card-text' variant='h5' color='gray'>
                 {text}
               </Typography>
             </div>
